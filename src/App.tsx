@@ -1,5 +1,11 @@
+import SingUp from "./components/SignUp";
+
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <SingUp />
+    </>
+  );
 };
 
 export default App;

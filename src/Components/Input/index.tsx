@@ -32,7 +32,6 @@ export const Input = ({
     <InputContainer isErrored={!!error} isRight={isRight} isGlass={!!isGlass}>
       {Icon && <Icon />}
       {img && <img src={img} alt="Pontos cinza" />}
-      {/* <input {...register(name)} {...rest} /> */}
       <input {...(register && register(name))} {...rest} />
     </InputContainer>
   </Container>

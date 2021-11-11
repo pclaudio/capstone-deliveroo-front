@@ -18,7 +18,7 @@ export const InputContainer = styled.div<ContainerProps>`
   background: white;
   border-radius: 10px;
   border: 2px solid grey;
-  color: #da6317;
+  color: var(--orange);
   padding: 1rem;
   width: 280px;
   display: flex;
@@ -26,10 +26,7 @@ export const InputContainer = styled.div<ContainerProps>`
   ${(props) =>
     props.isErrored &&
     css`
-      border-color: #f00;
-      svg {
-        color: #f00;
-      }
+      border-color: var(--error);
     `}
   ${(props) =>
     props.isRight &&
@@ -45,7 +42,7 @@ export const InputContainer = styled.div<ContainerProps>`
       border: none;
 
       input {
-        color: #da6317;
+        color: var(--orange);
         opacity: 0.4;
         font-weight: normal;
       }
@@ -63,7 +60,7 @@ export const InputContainer = styled.div<ContainerProps>`
   }
   svg {
     margin-right: 16px;
-    color: #da6317;
+    color: var(--orange);
   }
   img {
     width: 24px;

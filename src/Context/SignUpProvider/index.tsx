@@ -18,6 +18,7 @@ interface ISignProf {
 }
 
 interface UserContextData {
+  id: number;
   signup: (data: ISignUpData) => void;
   signupProfile: (data: ISignProf) => void;
 }
@@ -26,29 +27,32 @@ export const UserContext = createContext<UserContextData>(
 );
 
 export const UserProvider = ({ children }: IChildren) => {
-  // const[auth,setAuth]= useState<string>(localStorage.getItem("@caps:token") || "")
-  const [userId, setUserId] = useState(0);
+  const [id, setId] = useState(0);
 
+  const [token] = useState(localStorage.getItem("@caps:token"));
   const signup = (user: ISignUpData) => {
     axios
       .post("https://json-capstone.herokuapp.com/register", user)
       .then(({ data }) => {
-        setUserId(data.user.id);
-        console.log(data.user);
+        setId(data.user.id);
+        localStorage.setItem("@caps:token", data.accessToken);
+        console.log(data);
       })
       .catch((err) => console.log(err));
   };
-
   const signupProfile = (user: ISignProf) => {
-    user.userId = userId;
+    console.log(token);
+    user.userId = id;
     axios
-      .post(`https://json-capstone.herokuapp.com/profiles`, user)
+      .post(`https://json-capstone.herokuapp.com/profiles`, user, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
 
   return (
-    <UserContext.Provider value={{ signup, signupProfile }}>
+    <UserContext.Provider value={{ id, signup, signupProfile }}>
       {children}
     </UserContext.Provider>
   );

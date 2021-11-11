@@ -1,4 +1,5 @@
 import Register from "./components/Register";
+import GetAddress from "./components/RegisterAddress";
 import RegisterProfile from "./components/RegisterProfile";
 
 const App = () => {
@@ -7,6 +8,8 @@ const App = () => {
       <Register />
       <hr />
       <RegisterProfile />
+      <hr />
+      <GetAddress />
     </>
   );
 };

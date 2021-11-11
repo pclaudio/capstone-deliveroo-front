@@ -14,6 +14,7 @@ const RegisterProfile = () => {
   const { signupProfile } = useSign();
   const onSubmit = (data: ISignProf) => {
     signupProfile(data);
+    console.log(data);
   };
 
   return (

@@ -1,9 +1,12 @@
-import SingUp from "./components/SignUp";
+import Register from "./components/Register";
+import RegisterProfile from "./components/RegisterProfile";
 
 const App = () => {
   return (
     <>
-      <SingUp />
+      <Register />
+      <hr />
+      <RegisterProfile />
     </>
   );
 };

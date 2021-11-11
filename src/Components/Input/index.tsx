@@ -9,13 +9,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   register?: UseFormRegister<FieldValues>;
   name: string;
   error?: string;
-  teste: boolean;
+  isRight: boolean;
+  isGlass?: boolean;
   img?: string;
 }
 
 export const Input = ({
   img,
-  teste,
+  isRight,
+  isGlass,
   label,
   icon: Icon,
   register,
@@ -27,7 +29,7 @@ export const Input = ({
     <div>
       {label} {!!error && <span> - {error}</span>}
     </div>
-    <InputContainer isErrored={!!error} isRight={teste}>
+    <InputContainer isErrored={!!error} isRight={isRight} isGlass={!!isGlass}>
       {Icon && <Icon />}
       {img && <img src={img} alt="Pontos cinza" />}
       {/* <input {...register(name)} {...rest} /> */}

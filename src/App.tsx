@@ -1,9 +1,8 @@
 import { Input } from "./Components/Input";
-import { FiLock } from "react-icons/fi";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Profile from "./Img/Profile.svg";
+import { BsSearch } from "react-icons/bs";
 
 interface UserData {
   email: string;
@@ -11,7 +10,6 @@ interface UserData {
 }
 
 const App = () => {
-  const logo = require("./Img/Profile.svg");
   const schema = yup.object().shape({
     email: yup.string().email("Email inválido").required("Campo Obrigatório"),
     password: yup
@@ -37,32 +35,32 @@ const App = () => {
       <h1>Login</h1>
 
       <Input
-        teste={true}
+        isRight={false}
         register={register}
         name="email"
-        icon={FiLock}
+        img={require("./Img/Message.svg").default}
         label="Email"
         placeholder="Seu melhor email"
         error={errors.email?.message}
       />
       <Input
-        teste={false}
+        isRight={false}
         register={register}
         name="password"
-        icon={FiLock}
+        img={require("./Img/Lock.svg").default}
         type="password"
         label="Senha"
         placeholder="Uma senha bem segura"
         error={errors.password?.message}
       />
       <Input
-        img={Profile}
-        teste={false}
+        isGlass
+        icon={BsSearch}
+        // img={require("./Img/User.svg").default}
+        isRight={false}
         name="password"
-        type="password"
-        label="Senha"
-        placeholder="Uma senha bem segura"
-        error={errors.password?.message}
+        label="Nome"
+        placeholder="Seu Nome"
         onChange={(e) => console.log(e.target.value)}
       />
 

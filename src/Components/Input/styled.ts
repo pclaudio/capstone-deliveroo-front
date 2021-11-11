@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 interface ContainerProps {
   isErrored: boolean;
   isRight: boolean;
+  isGlass: boolean;
 }
 export const Container = styled.div`
   text-align: left;
@@ -17,7 +18,7 @@ export const InputContainer = styled.div<ContainerProps>`
   background: white;
   border-radius: 10px;
   border: 2px solid grey;
-  color: grey;
+  color: #da6317;
   padding: 1rem;
   width: 280px;
   display: flex;
@@ -33,8 +34,20 @@ export const InputContainer = styled.div<ContainerProps>`
   ${(props) =>
     props.isRight &&
     css`
-      display: flex;
       flex-direction: row-reverse;
+    `}
+    ${(props) =>
+    props.isGlass &&
+    css`
+      background-color: rgba(249, 168, 77, 0.1);
+      mix-blend-mode: normal;
+      border-radius: 15px;
+      border: none;
+
+      input {
+        color: #da6317;
+        opacity: 0.4;
+        font-weight: normal;
       }
     `}
   input {
@@ -50,11 +63,11 @@ export const InputContainer = styled.div<ContainerProps>`
   }
   svg {
     margin-right: 16px;
-    background: linear-gradient(
-      135deg,
-      rgba(83, 232, 139, 1) 35%,
-      rgba(21, 190, 119, 1) 100%
-    );
-    border: none;
+    color: #da6317;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
   }
 `;

@@ -56,9 +56,9 @@ export const InputContainer = styled.div<ContainerProps>`
     align-items: center;
     flex: 1;
     border: 0;
-    color: var(--black);
+    color: black;
     &::placeholder {
-      color: var(--grey);
+      color: grey;
     }
   }
   svg {

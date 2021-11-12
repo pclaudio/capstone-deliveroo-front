@@ -6,7 +6,7 @@ import * as yup from "yup"
 import logo from "../../assets/testeLogo.svg"
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import bgimg from "../../assets/cat-simple-background-portrait-display-wallpaper-preview.jpg"
+import bgimg from "../../assets/Pattern.svg"
 import face from "../../assets/facebook.png"
 import google from "../../assets/google.png"
 

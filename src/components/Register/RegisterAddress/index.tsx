@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { ILocation, useLocateCep } from "../../../Context/cepProvider";
+import { ILocation, useLocateCep } from "../../../providers/cepProvider";
 
 const GetAddress = () => {
   const { ceps, cepNumber, setCepNumber, handleSearch } = useLocateCep();

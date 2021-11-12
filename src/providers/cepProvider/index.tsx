@@ -8,6 +8,8 @@ import {
   SetStateAction,
   Dispatch,
 } from "react";
+import { Redirect } from "react-router";
+import { useAuthentication } from "../Authentication";
 import { useSign } from "../SignUpProvider";
 
 interface ILocationProps {
@@ -50,6 +52,7 @@ export const LocateCepProvider = ({ children }: ILocationProps) => {
   const [cepNumber, setCepNumber] = useState<string>("");
   const [token] = useState(localStorage.getItem("@caps:token"));
   const { id } = useSign();
+  const { nextStep } = useAuthentication();
 
   const handleSearch = async () => {
     if (cepNumber.length === 8) {
@@ -80,7 +83,7 @@ export const LocateCepProvider = ({ children }: ILocationProps) => {
       .post(`https://json-capstone.herokuapp.com/address`, user, {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((res) => console.log(res))
+      .then((res) => nextStep())
       .catch((err) => console.log(err));
   };
 

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useSign } from "../../../Context/SignUpProvider";
+import { useSign } from "../../../providers/SignUpProvider";
 
 interface ISignProf {
   firstName: string;
@@ -14,7 +14,6 @@ const RegisterProfile = () => {
   const { signupProfile } = useSign();
   const onSubmit = (data: ISignProf) => {
     signupProfile(data);
-    console.log(data);
   };
 
   return (
@@ -28,7 +27,7 @@ const RegisterProfile = () => {
         />
         <input placeholder="Ultimo Nome" type="tex" {...register("lastName")} />
         <input placeholder="Contato" type="tel" {...register("phone")} />
-        <button type="submit">Criar Conta</button>
+        <button type="submit">Continuar</button>
       </form>
     </>
   );

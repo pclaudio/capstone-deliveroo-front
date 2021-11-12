@@ -1,6 +1,6 @@
 import { createContext, useContext, ReactNode, useState } from "react";
-
 import axios from "axios";
+import { useAuthentication } from "../Authentication";
 
 interface IChildren {
   children: ReactNode;
@@ -28,6 +28,7 @@ export const UserContext = createContext<UserContextData>(
 
 export const UserProvider = ({ children }: IChildren) => {
   const [id, setId] = useState(0);
+  const { nextStep } = useAuthentication();
 
   const [token] = useState(localStorage.getItem("@caps:token"));
   const signup = (user: ISignUpData) => {
@@ -36,6 +37,7 @@ export const UserProvider = ({ children }: IChildren) => {
       .then(({ data }) => {
         setId(data.user.id);
         localStorage.setItem("@caps:token", data.accessToken);
+        nextStep();
       })
       .catch((err) => console.log(err));
   };
@@ -45,7 +47,7 @@ export const UserProvider = ({ children }: IChildren) => {
       .post(`https://json-capstone.herokuapp.com/profiles`, user, {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((res) => console.log(res))
+      .then((res) => nextStep())
       .catch((err) => console.log(err));
   };
 

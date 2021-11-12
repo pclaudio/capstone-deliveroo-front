@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useSign } from "../../../Context/SignUpProvider";
+import { useSign } from "../../../providers/SignUpProvider";
 
 interface ISignUpData {
   username: string;

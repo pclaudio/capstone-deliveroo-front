@@ -37,8 +37,16 @@ export const AuthenticationProvider = ({
   children,
 }: NodeProps): JSX.Element => {
   const [token, setToken] = useState<string>(getLocalStorageToken());
-
   const [user, setUser] = useState<UserProps>(getLocalStorageUser());
+  const [step, setStep] = useState(0);
+
+  const nextStep = () => {
+    if (step <= 6) {
+      const newStep = step + 1;
+
+      setStep(newStep);
+    }
+  };
 
   const getIsAuthenticated = (): boolean => {
     const localStorageToken: string = getLocalStorageToken();
@@ -69,7 +77,15 @@ export const AuthenticationProvider = ({
 
   return (
     <AuthenticationContext.Provider
-      value={{ token, user, getIsAuthenticated, handleLogin, handleLogout }}
+      value={{
+        step,
+        nextStep,
+        token,
+        user,
+        getIsAuthenticated,
+        handleLogin,
+        handleLogout,
+      }}
     >
       {children}
     </AuthenticationContext.Provider>

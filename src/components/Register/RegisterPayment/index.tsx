@@ -1,7 +1,11 @@
+import { useAuthentication } from "../../../providers/Authentication";
+
 const RegisterPayment = () => {
   function onChangeValue(event: any) {
     console.log(event.target.value);
   }
+
+  const { nextStep } = useAuthentication();
   return (
     <>
       <h3>Metodo de Pagamento</h3>
@@ -15,6 +19,7 @@ const RegisterPayment = () => {
         <span>Payonner</span>
         <input type="radio" value="Payonner" name="pay" />
       </div>
+      <button onClick={nextStep}>Proximo Passo</button>
     </>
   );
 };

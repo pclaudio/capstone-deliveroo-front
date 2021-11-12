@@ -1,4 +1,5 @@
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
+import Route from "./route";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
@@ -19,7 +20,7 @@ const Routes = (): JSX.Element => {
         <SignUp />
       </Route>
 
-      <Route path="/marketplace">
+      <Route path="/marketplace" isPrivate>
         <Marketplace />
       </Route>
     </Switch>

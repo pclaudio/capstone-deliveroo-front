@@ -36,12 +36,10 @@ export const UserProvider = ({ children }: IChildren) => {
       .then(({ data }) => {
         setId(data.user.id);
         localStorage.setItem("@caps:token", data.accessToken);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   };
   const signupProfile = (user: ISignProf) => {
-    console.log(token);
     user.userId = id;
     axios
       .post(`https://json-capstone.herokuapp.com/profiles`, user, {

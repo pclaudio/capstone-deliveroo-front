@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useSign } from "../../Context/SignUpProvider";
+import { useSign } from "../../../Context/SignUpProvider";
 
 interface ISignProf {
   firstName: string;

@@ -14,7 +14,7 @@ interface ILocationProps {
   children: ReactNode;
 }
 
-interface ILocation {
+export interface ILocation {
   userId: number;
   number: string;
   complemento: string;
@@ -40,6 +40,7 @@ interface LocationData {
   setCeps: Dispatch<SetStateAction<ILocation>>;
   handleSearch: (local: string) => void;
   addAddress: (user: ILocation) => void;
+  completeAddress: (user: ILocation) => void;
 }
 
 const LocateCepContext = createContext<LocationData>({} as LocationData);
@@ -67,8 +68,13 @@ export const LocateCepProvider = ({ children }: ILocationProps) => {
     setCepNumber(cepNumber);
   }, []);
 
+  const completeAddress = (data: ILocation) => {
+    ceps.number = data.number;
+    ceps.complemento = data.complemento;
+    setCeps(ceps);
+  };
+
   const addAddress = (user: ILocation) => {
-    console.log(token);
     user.userId = id;
     axios
       .post(`https://json-capstone.herokuapp.com/address`, user, {
@@ -81,6 +87,7 @@ export const LocateCepProvider = ({ children }: ILocationProps) => {
   return (
     <LocateCepContext.Provider
       value={{
+        completeAddress,
         addAddress,
         ceps,
         setCepNumber,

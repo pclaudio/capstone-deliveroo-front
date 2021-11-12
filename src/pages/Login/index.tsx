@@ -6,7 +6,7 @@ import * as yup from "yup"
 import logo from "../../assets/testeLogo.svg"
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import bgimg from "../../assets/Svgfoodbackground.svg"
+import bgimg from "../../assets/cat-simple-background-portrait-display-wallpaper-preview.jpg"
 import face from "../../assets/facebook.png"
 import google from "../../assets/google.png"
 
@@ -61,7 +61,7 @@ const Login = () => {
                                 Or Continue With
                             </H6>
                         </div>
-                        <div>
+                        <div className="loginFaceGoogle">
                             <Button className="faceGoogle"><Icon src={face} /> Facebook</Button>
                             <Button className="faceGoogle"><Icon src={google} /> Google</Button>
                         </div>

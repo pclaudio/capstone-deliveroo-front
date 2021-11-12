@@ -31,8 +31,11 @@ width: 30vh;
 margin: 0 auto;
 `
 export const BgImg = styled.img`
+display: block;
 position: absolute;
 color: var(--primary-color);
+width: 100vw;
+z-index:-1;
 `
 
 export const LoginContainer = styled.div`
@@ -61,6 +64,9 @@ export const LoginContainer = styled.div`
         flex-direction: column;
         gap: 20px;
         margin: 20px auto;
+        .loginFaceGoogle{
+            display: flex;
+        }
         .inputsContainer {
             width: 100%;
             display: flex;

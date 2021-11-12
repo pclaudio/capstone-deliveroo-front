@@ -31,7 +31,6 @@ body {
     background-attachment: fixed;
     color: var(--grey-600);
     height: 100%;
-    margin: 10px;
 }
 
 h1 {

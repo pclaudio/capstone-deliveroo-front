@@ -1,12 +1,9 @@
 import styled, { css } from "styled-components";
+import { ContainerProps } from "./types";
 
-interface ContainerProps {
-  isErrored: boolean;
-  isRight: boolean;
-  isGlass: boolean;
-}
 export const Container = styled.div`
   text-align: left;
+
   div {
     span {
       color: #f00;
@@ -23,16 +20,19 @@ export const InputContainer = styled.div<ContainerProps>`
   width: 280px;
   display: flex;
   transition: 0.4s;
+
   ${(props) =>
     props.isErrored &&
     css`
       border-color: var(--error);
     `}
+
   ${(props) =>
     props.isRight &&
     css`
       flex-direction: row-reverse;
     `}
+
     ${(props) =>
     props.isGlass &&
     css`
@@ -47,6 +47,7 @@ export const InputContainer = styled.div<ContainerProps>`
         font-weight: normal;
       }
     `}
+
   input {
     width: 100%;
     background: transparent;
@@ -54,14 +55,17 @@ export const InputContainer = styled.div<ContainerProps>`
     flex: 1;
     border: 0;
     color: black;
+
     &::placeholder {
       color: grey;
     }
   }
+
   svg {
     margin-right: 16px;
     color: var(--orange);
   }
+
   img {
     width: 24px;
     height: 24px;

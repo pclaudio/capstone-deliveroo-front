@@ -1,11 +1,7 @@
-import Register from "./components/Register";
+import Routes from "./routes";
 
 const App = () => {
-  return (
-    <>
-      <Register />
-    </>
-  );
+  return <Routes />;
 };
 
 export default App;

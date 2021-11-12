@@ -35,6 +35,7 @@ display: block;
 position: absolute;
 color: var(--primary-color);
 width: 100vw;
+height: 100vh;
 z-index:-1;
 `
 

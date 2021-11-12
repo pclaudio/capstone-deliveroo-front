@@ -11,12 +11,14 @@ export default createGlobalStyle`
 }
 :root {
     --primary-color: linear-gradient(135deg, rgba(83,232,139,1) 35%, rgba(21,190,119,1) 100%);
+    --hover-color: linear-gradient(135deg, rgba(21,190,119,1) 35%, rgba(83,232,139,1) 100%);
     --primary-color-50: #93D7AF;
     --secondary-color: #EB5757;
     --white: #F5F5F5;
     --grey-600: #333333;
     --grey-300: #828282;
     --grey-100: #E0E0E0;
+    --orange: #da6317;
     --info: #155BCB;
     --success: #168821;
     --warning: #FFCD07;

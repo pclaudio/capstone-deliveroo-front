@@ -1,10 +1,6 @@
 import styled from "styled-components";
+import { ContainerProps } from "./types";
 
-interface ContainerProps {
-  disable: boolean;
-  medium: boolean;
-  full: boolean;
-}
 export const Container = styled.button<ContainerProps>`
   height: ${(props) => (props.medium ? 40 : 57)}px;
   width: ${(props) => (props.full ? "100%" : "157px")};
@@ -17,7 +13,7 @@ export const Container = styled.button<ContainerProps>`
   font-size: 16px;
   line-height: 19px;
   margin: 0 auto;
-  
+
   &:hover {
     background: var(--hover-color);
     font-weight: 700;

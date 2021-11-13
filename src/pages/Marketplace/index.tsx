@@ -1,5 +1,18 @@
+import { useAuthentication } from "../../providers/Authentication";
+
 const Marketplace = (): JSX.Element => {
-  return <h1>Marketplace</h1>;
+  const { handleLogout } = useAuthentication();
+
+  const handleLogoutClick = (): void => {
+    handleLogout();
+  };
+
+  return (
+    <>
+      <h1>Marketplace</h1>
+      <button onClick={handleLogoutClick}>Sair</button>
+    </>
+  );
 };
 
 export default Marketplace;

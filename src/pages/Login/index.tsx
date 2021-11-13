@@ -37,8 +37,6 @@ const Login = (): JSX.Element => {
     setValue("password", "");
   };
 
-  console.log(isFetching);
-
   return (
     <MainLoginContainer>
       <BgImg src={bgimg} />

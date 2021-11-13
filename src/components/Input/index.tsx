@@ -3,8 +3,8 @@ import { Container, InputContainer } from "./styles";
 
 const Input = ({
   img,
-  isRight,
-  isGlass,
+  isRight = false,
+  isGlass = false,
   label,
   icon: Icon,
   register,

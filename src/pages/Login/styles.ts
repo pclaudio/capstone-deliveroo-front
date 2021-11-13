@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { styled as muiStyled } from "@mui/material/styles";
+import {
+  CircularProgress as MuiCircularProgress,
+  CircularProgressProps,
+} from "@mui/material";
 
 export const MainLoginContainer = styled.div`
   display: flex;
@@ -104,3 +109,9 @@ export const LoginContainer = styled.div`
     }
   }
 `;
+
+export const CircularProgress = muiStyled(
+  MuiCircularProgress
+)<CircularProgressProps>(({ theme }) => ({
+  color: "rgba(83, 232, 139)",
+}));

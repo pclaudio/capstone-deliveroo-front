@@ -40,6 +40,8 @@ export const AuthenticationProvider = ({
 
   const [user, setUser] = useState<UserProps>(getLocalStorageUser());
 
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+
   const getIsAuthenticated = (): boolean => {
     const localStorageToken: string = getLocalStorageToken();
     const localStorageUser: UserProps = getLocalStorageUser();
@@ -55,9 +57,17 @@ export const AuthenticationProvider = ({
   };
 
   const handleLogin = (userLogin: UserProps): void => {
+    setIsFetching(true);
+
     postLogin(userLogin)
-      .then((response: AxiosResponse) => setTokenAndUser(response))
-      .catch((error: AxiosResponse) => console.log(error));
+      .then((response: AxiosResponse) => {
+        setTokenAndUser(response);
+        setIsFetching(false);
+      })
+      .catch((error: AxiosResponse) => {
+        console.log(error);
+        setIsFetching(false);
+      });
   };
 
   const handleLogout = (): void => {
@@ -69,7 +79,14 @@ export const AuthenticationProvider = ({
 
   return (
     <AuthenticationContext.Provider
-      value={{ token, user, getIsAuthenticated, handleLogin, handleLogout }}
+      value={{
+        token,
+        user,
+        isFetching,
+        getIsAuthenticated,
+        handleLogin,
+        handleLogout,
+      }}
     >
       {children}
     </AuthenticationContext.Provider>

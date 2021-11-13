@@ -1,3 +1,4 @@
+import { useAuthentication } from "../../providers/Authentication";
 import { UserProps } from "../../globalTypes";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -16,13 +17,27 @@ import {
   BgImg,
   Icon,
   H66,
+  CircularProgress,
 } from "./styles";
 
 const Login = (): JSX.Element => {
+  const { isFetching, handleLogin } = useAuthentication();
+
   const {
     register,
+    handleSubmit,
+    setValue,
     formState: { errors },
-  } = useForm<UserProps>({ resolver: yupResolver(schema) });
+  } = useForm<UserProps>({
+    resolver: yupResolver(schema),
+  });
+
+  const handleLoginSubmit = (user: UserProps): void => {
+    handleLogin(user);
+    setValue("password", "");
+  };
+
+  console.log(isFetching);
 
   return (
     <MainLoginContainer>
@@ -36,7 +51,11 @@ const Login = (): JSX.Element => {
 
       <LoginContainer>
         <div id="loginContent">
-          <form autoComplete="off" className="inputsContainer">
+          <form
+            autoComplete="off"
+            className="inputsContainer"
+            onSubmit={handleSubmit(handleLoginSubmit)}
+          >
             <div className="inputsContainer">
               <div className="inputContainer">
                 <Input
@@ -73,7 +92,13 @@ const Login = (): JSX.Element => {
 
             <H66>Forgot Your Password?</H66>
 
-            <Button type="submit">Logar</Button>
+            {isFetching ? (
+              <Button type="submit" disable>
+                <CircularProgress size={28} />
+              </Button>
+            ) : (
+              <Button type="submit">Logar</Button>
+            )}
           </form>
         </div>
       </LoginContainer>

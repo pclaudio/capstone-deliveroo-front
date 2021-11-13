@@ -11,9 +11,9 @@ interface ISignProf {
 const RegisterProfile = () => {
   const { register, handleSubmit } = useForm();
 
-  const { signupProfile } = useSign();
+  const { addProfile } = useSign();
   const onSubmit = (data: ISignProf) => {
-    signupProfile(data);
+    addProfile(data);
   };
 
   return (

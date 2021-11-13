@@ -1,11 +1,15 @@
 import { useAuthentication } from "../../../providers/Authentication";
+import { useSign } from "../../../providers/SignUpProvider";
 
 const RegisterTheme = () => {
+  const { nextStep } = useAuthentication();
+  const { addTheme } = useSign();
+
   function onChangeValue(event: any) {
-    console.log(event.target.value);
+    addTheme(event.target.value);
+    nextStep();
   }
 
-  const { nextStep } = useAuthentication();
   return (
     <>
       <h3>Escolhendo Tema d Aplicação</h3>
@@ -16,7 +20,7 @@ const RegisterTheme = () => {
         <span>Dark</span>
         <input type="radio" value="#000 dark" name="theme" />
       </div>
-      <button onClick={nextStep}></button>
+      <button onClick={onChangeValue}>Proximo Passo</button>
     </>
   );
 };

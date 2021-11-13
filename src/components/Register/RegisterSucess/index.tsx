@@ -6,7 +6,7 @@ const RegisterSucess = () => {
       <h1>Aqui Comfirma Cadastro da conta</h1>
       <br />
       <Link to="/login">
-        <button>Mandar pro dashboard</button>{" "}
+        <button>Mandar pro dashboard</button>
       </Link>
       ;
     </div>

@@ -9,6 +9,7 @@ import {
   Dispatch,
 } from "react";
 import { Redirect } from "react-router";
+import { Toast } from "react-toastify/dist/components";
 import { useAuthentication } from "../Authentication";
 import { useSign } from "../SignUpProvider";
 
@@ -77,9 +78,9 @@ export const LocateCepProvider = ({ children }: ILocationProps) => {
     setCeps(ceps);
   };
 
-  const addAddress = (user: ILocation) => {
+  const addAddress = async (user: ILocation) => {
     user.userId = id;
-    axios
+    await axios
       .post(`https://json-capstone.herokuapp.com/address`, user, {
         headers: { Authorization: `Bearer ${token}` },
       })

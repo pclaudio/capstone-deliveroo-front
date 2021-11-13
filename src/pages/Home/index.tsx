@@ -1,5 +1,7 @@
 import { useHistory } from "react-router";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const Home = (): JSX.Element => {
   const history = useHistory();
 

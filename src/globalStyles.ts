@@ -58,36 +58,6 @@ button, svg, path {
     max-width: 479px;
 }
 
-.Toastify__toast-theme--colored.Toastify__toast--success {
-    color: var(--success);
-    background: var(--white);
-    border: 2px solid var(--grey-100);
-    border-radius: 10px;
-
-    .Toastify__progress-bar {
-        background: var(--success);
-    }
-
-    .Toastify__close-button--colored {
-        color: var(--success);
-    }
-}
-
-.Toastify__toast-theme--colored.Toastify__toast--error, .Toastify__toast-theme--colored.Toastify__toast--warning {
-    color: var(--error);
-    background: var(--white);
-    border: 2px solid var(---grey-100);
-    border-radius: 10px;
-
-    .Toastify__progress-bar {
-        background: var(--error);
-    }
-
-    .Toastify__close-button--colored {
-        color: var(--error);
-    }
-}
-
 @media screen and (min-width: 1024px) {
     body {
         margin: 115px 0;

@@ -4,7 +4,10 @@ import { AxiosResponse } from "axios";
 import { postLogin } from "../../services/api";
 import jwt_decode, { JwtPayload } from "jwt-decode";
 import { NodeProps, UserProps } from "../../globalTypes";
-import { AuthenticationProviderProps } from "./types";
+import { AuthenticationProviderProps, ErrorResponseProps } from "./types";
+import { toast } from "react-toastify";
+import toastOptions from "../../utils/toastOptions";
+import translateMessage from "../../utils/translateMessage";
 
 const AuthenticationContext = createContext<AuthenticationProviderProps>(
   {} as AuthenticationProviderProps
@@ -64,8 +67,8 @@ export const AuthenticationProvider = ({
         setTokenAndUser(response);
         setIsFetching(false);
       })
-      .catch((error: AxiosResponse) => {
-        console.log(error);
+      .catch((error: ErrorResponseProps) => {
+        toast.error(translateMessage(error.response?.data), toastOptions);
         setIsFetching(false);
       });
   };

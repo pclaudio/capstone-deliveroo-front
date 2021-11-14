@@ -8,3 +8,9 @@ export interface AuthenticationProviderProps {
   handleLogin: (user: UserProps) => voi;
   handleLogout: () => void;
 }
+
+export interface ErrorResponseProps {
+  response: {
+    data: string;
+  };
+}

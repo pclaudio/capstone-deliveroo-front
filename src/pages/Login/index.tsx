@@ -68,7 +68,7 @@ const Login = (): JSX.Element => {
               <div className="inputContainer">
                 <Input
                   type="password"
-                  placeholder="Senha *"
+                  placeholder="Password *"
                   name="password"
                   register={register}
                 />

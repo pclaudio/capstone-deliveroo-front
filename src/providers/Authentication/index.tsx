@@ -7,7 +7,6 @@ import { NodeProps, UserProps } from "../../globalTypes";
 import { AuthenticationProviderProps, ErrorResponseProps } from "./types";
 import { toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
-import translateMessage from "../../utils/translateMessage";
 
 const AuthenticationContext = createContext<AuthenticationProviderProps>(
   {} as AuthenticationProviderProps
@@ -68,7 +67,7 @@ export const AuthenticationProvider = ({
         setIsFetching(false);
       })
       .catch((error: ErrorResponseProps) => {
-        toast.error(translateMessage(error.response?.data), toastOptions);
+        toast.error(error.response?.data, toastOptions);
         setIsFetching(false);
       });
   };

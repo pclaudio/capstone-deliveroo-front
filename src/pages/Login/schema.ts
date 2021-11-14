@@ -4,13 +4,13 @@ const schema = yup.object().shape({
   email: yup
     .string()
     .trim()
-    .required("E-mail é obrigatório")
-    .email("Não é um e-mail válido"),
+    .required("Email is required")
+    .email("It's not a valid email"),
   password: yup
     .string()
     .trim()
-    .required("Senha é obrigatória")
-    .min(5, "A senha deve ter no mínimo 5 dígitos"),
+    .required("Password is required")
+    .min(5, "Password must be at least 5 digits long"),
 });
 
 export default schema;

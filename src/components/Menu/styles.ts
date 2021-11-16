@@ -29,10 +29,10 @@ export const ButtonMenu = styled.button`
     transition: 0.3s ease;
     &:focus {
         transition: 0.3s ease;
-        font-size: 10px;
+        font-size: 12px;
         background-color: #53e88b38;
         width: 80px;
         height: 40px;
-        border-radius: 22px;
+        border-radius: 12px;
   }
 `;

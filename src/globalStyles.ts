@@ -60,7 +60,6 @@ button, svg, path {
 
 @media screen and (min-width: 1024px) {
     body {
-        margin: 115px 0;
         margin-bottom: 0;
     }
 }`;

@@ -1,4 +1,5 @@
 import { useAuthentication } from "../../providers/Authentication";
+import Menu from "../../components/Menu";
 
 const Marketplace = (): JSX.Element => {
   const { handleLogout } = useAuthentication();
@@ -11,6 +12,7 @@ const Marketplace = (): JSX.Element => {
     <>
       <h1>Marketplace</h1>
       <button onClick={handleLogoutClick}>Sair</button>
+      <Menu />
     </>
   );
 };

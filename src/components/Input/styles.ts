@@ -12,7 +12,7 @@ export const Container = styled.div`
 `;
 
 export const InputContainer = styled.div<ContainerProps>`
-  background: white;
+  background: #FEFEFF;
   border-radius: 10px;
   border: 2px solid grey;
   color: var(--orange);

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { styled as muiStyled } from "@mui/material/styles";
+import bgimg from "../../assets/img/Pattern.svg";
 import {
   CircularProgress as MuiCircularProgress,
   CircularProgressProps,
@@ -9,7 +10,12 @@ export const MainLoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 246, 252, 0.2),
+      rgba(255, 255, 255, 1)
+    ),
+    url(${bgimg});
   #box {
     display: flex;
     flex-direction: column;
@@ -24,8 +30,8 @@ export const Icon = styled.img`
 
 export const H66 = styled.h6`
   font-weight: normal;
-  margin: 0 auto 30px;
-  color: var(--primary-color);
+  margin: 20px auto 20px;
+  color: #1DB46B;
 `;
 
 export const H6 = styled.h6`
@@ -44,8 +50,6 @@ export const BgImg = styled.img`
   position: absolute;
   color: var(--primary-color);
   width: 100vw;
-  height: 100vh;
-  z-index: -1;
 `;
 
 export const LoginContainer = styled.div`
@@ -89,7 +93,7 @@ export const LoginContainer = styled.div`
       height: 60px;
       display: flex;
       flex-direction: column;
-      margin: 0 auto;
+      margin: 0 auto 10px;
 
       .errorLabel {
         color: var(--secondary-color);

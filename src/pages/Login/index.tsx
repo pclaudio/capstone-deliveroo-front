@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "./schema";
 import logo from "../../assets/img/testeLogo.svg";
-import bgimg from "../../assets/img/Pattern.svg";
 import face from "../../assets/img/facebook.png";
 import google from "../../assets/img/google.png";
 import Button from "../../components/Button";
@@ -15,7 +14,6 @@ import {
   MainLoginContainer,
   Logo,
   H6,
-  BgImg,
   Icon,
   H66,
   CircularProgress,
@@ -42,8 +40,6 @@ const Login = (): JSX.Element => {
 
   return (
     <MainLoginContainer>
-      <BgImg src={bgimg} />
-
       <div id="box">
         <Logo src={logo} />
       </div>
@@ -100,6 +96,7 @@ const Login = (): JSX.Element => {
             ) : (
               <Button type="submit">Logar</Button>
             )}
+            <H66>don’t have an account?</H66>
           </form>
         </div>
       </LoginContainer>

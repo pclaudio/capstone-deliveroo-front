@@ -1,14 +1,30 @@
 import styled from "styled-components";
 
-export const FormPayment = styled.form`
+export const FormTheme = styled.form`
   margin: 0;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
 
-  p {
-    color: var(--error);
+  label {
+    .darkBox {
+      border: 3px solid white;
+      width: 100px;
+      text-align: center;
+      border-radius: 10px;
+      .darkText {
+        color: white;
+      }
+    }
+    .lightBox {
+      border: 3px solid black;
+      width: 100px;
+      text-align: center;
+      border-radius: 10px;
+      .lightText {
+        color: black;
+      }
+    }
   }
 
   input {
@@ -19,36 +35,33 @@ export const FormPayment = styled.form`
     appearance: none;
   }
 
-  input:active + .drinkcard-cc {
+  input:active + .theme {
     opacity: 0.9;
   }
-  input:checked + .drinkcard-cc {
+  input:checked + .theme {
     -webkit-filter: none;
     -moz-filter: none;
     filter: none;
   }
 
-  .paypal {
-    background-image: url("https://imgur.com/gwOJ7MZ.png");
+  .light {
+    background-image: url("https://imgur.com/YUehYi7.png");
   }
-  .visa {
-    background-image: url("https://imgur.com/donIj7U.png");
-  }
-  .payonner {
-    background-image: url("https://imgur.com/s66p1KA.png");
+  .dark {
+    background-image: url("https://imgur.com/8HY8JmL.png");
   }
 
-  .drinkcard-cc {
+  .theme {
     background-position: center;
     margin-bottom: 6px;
     cursor: pointer;
     border-radius: 10px;
-    border: 2px solid var(--hover-color-50);
-    background-size: contain;
+    border: 3px solid var(--hover-color-50);
+    background-size: cover;
     background-repeat: no-repeat;
     display: inline-block;
     width: 280px;
-    height: 50px;
+    height: 360px;
     -webkit-transition: all 100ms ease-in;
     -moz-transition: all 100ms ease-in;
     transition: all 100ms ease-in;
@@ -56,9 +69,13 @@ export const FormPayment = styled.form`
     -moz-filter: brightness(1.8) grayscale(1) opacity(0.7);
     filter: brightness(1.8) grayscale(1) opacity(0.7);
   }
-  .drinkcard-cc:hover {
+  .theme:hover {
     -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
     -moz-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
     filter: brightness(1.2) grayscale(0.5) opacity(0.9);
   }
+`;
+
+export const Error = styled.p`
+  color: var(--error);
 `;

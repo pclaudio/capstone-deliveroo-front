@@ -19,8 +19,8 @@ export const ListProvider = ({ children }: IChildren) => {
   const [list, setList] = useState<IResponseLogin[]>([] as IResponseLogin[]);
 
   const { token } = useToken();
-  useEffect(() => {
-    axios
+  const MarketPlace = async () => {
+    await axios
       .get("https://json-capstone.herokuapp.com/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -28,7 +28,8 @@ export const ListProvider = ({ children }: IChildren) => {
         setList([...res.data]);
       })
       .catch((err) => console.log(err));
-  }, []);
+  };
+  MarketPlace();
 
   const ProductsMarket = async (id: number) => {
     await axios

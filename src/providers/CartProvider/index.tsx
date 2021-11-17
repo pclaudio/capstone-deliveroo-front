@@ -16,6 +16,7 @@ export const CartProvider = ({ children }: IChildren) => {
       setCount(count + item.price);
     } else {
       item.amount = item.amount + 1;
+
       setCount(count + item.price);
 
       setListCart([...listCart]);

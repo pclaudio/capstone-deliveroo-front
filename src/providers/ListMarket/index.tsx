@@ -21,7 +21,7 @@ export const ListProvider = ({ children }: IChildren) => {
   const { token } = useToken();
   const MarketPlace = async () => {
     await axios
-      .get("https://json-capstone.herokuapp.com/users", {
+      .get("https://json-capstone.herokuapp.com/users/?store=true", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

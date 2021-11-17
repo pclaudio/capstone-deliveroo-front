@@ -5,7 +5,6 @@ function CardListMarket() {
 
   return (
     <div className="container">
-      <h2>Marketplace</h2>
       {list.map((item) => {
         return (
           <div key={item.id} className="cardMarket">

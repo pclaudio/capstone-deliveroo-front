@@ -10,6 +10,7 @@ const Input = ({
   register,
   name,
   error = "",
+
   ...rest
 }: InputProps): JSX.Element => {
   return (

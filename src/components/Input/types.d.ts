@@ -10,6 +10,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isRight?: boolean;
   isGlass?: boolean;
   img?: string;
+  ref?: any;
 }
 
 interface ContainerProps {

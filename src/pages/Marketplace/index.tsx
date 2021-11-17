@@ -1,5 +1,6 @@
 import CardListMarket from "../../components/CardListMarket";
 import CardListProduct from "../../components/CardListProducts";
+import DetailProduct from "../../components/DetailProduct";
 import { useAuthentication } from "../../providers/Authentication";
 import { useListMarket } from "../../providers/ListMarket";
 import "./style.css";
@@ -19,6 +20,7 @@ const Marketplace = (): JSX.Element => {
       <div className="container">
         {list && list.map((item) => CardListMarket(item))}
         {listProducts.length > 0 ? CardListProduct() : ""}
+        <DetailProduct />
       </div>
     </>
   );

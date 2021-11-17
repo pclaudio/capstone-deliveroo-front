@@ -1,24 +1,15 @@
 import React from "react";
 import { HiChevronLeft } from "react-icons/hi";
-import {
-  ProfileRegisterContainer,
-  RegisterProfileContainer,
-  RegisterProfileWrapp,
-} from "./style";
 import Button from "../Button";
 import { useStep } from "../../providers/Step";
+import { Container, ContainerWrapp, MainContainer } from "./styles";
+import { WireFrameProps } from "./types";
 
-interface Props {
-  form?: string;
-  children: any;
-  func?: any;
-}
-
-export default function Wireframe({ func, form, children }: Props) {
+export default function Wireframe({ func, form, children }: WireFrameProps) {
   const { handleStepDecrementation } = useStep();
   return (
-    <ProfileRegisterContainer>
-      <RegisterProfileContainer>
+    <MainContainer>
+      <Container>
         <Button
           short
           className="marginButton"
@@ -26,8 +17,8 @@ export default function Wireframe({ func, form, children }: Props) {
         >
           <HiChevronLeft />
         </Button>
-        <RegisterProfileWrapp>{children}</RegisterProfileWrapp>
-      </RegisterProfileContainer>
+        <ContainerWrapp>{children}</ContainerWrapp>
+      </Container>
       <Button
         form={form}
         onClick={func}
@@ -36,6 +27,6 @@ export default function Wireframe({ func, form, children }: Props) {
       >
         Next
       </Button>
-    </ProfileRegisterContainer>
+    </MainContainer>
   );
 }

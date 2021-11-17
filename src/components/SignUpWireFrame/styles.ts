@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import bgimg from "../../../assets/img/Pattern.svg";
+import bgimg from "../../assets/img/Pattern.svg";
 
-export const ProfileRegisterContainer = styled.div`
+export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,7 +10,7 @@ export const ProfileRegisterContainer = styled.div`
   background-image: linear-gradient(
       to bottom,
       rgba(245, 246, 252, 0.2),
-      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
@@ -24,7 +24,7 @@ export const ProfileRegisterContainer = styled.div`
   }
 `;
 
-export const RegisterProfileContainer = styled.div`
+export const Container = styled.div`
   max-width: 500px;
   width: 100%;
   min-width: 280px;
@@ -37,14 +37,14 @@ export const RegisterProfileContainer = styled.div`
   }
 `;
 
-export const RegisterProfileWrapp = styled.div`
+export const ContainerWrapp = styled.div`
   width: 90%;
   display: flex;
   flex-direction: column;
   margin: 20px auto;
 `;
 
-export const FormProfileRegister = styled.form`
+export const FormWireFrame = styled.form`
   margin: 0;
   width: 100%;
   display: flex;
@@ -52,7 +52,7 @@ export const FormProfileRegister = styled.form`
   align-items: center;
 `;
 
-export const H66 = styled.h6`
+export const H66WireFrame = styled.h6`
   font-weight: normal;
   font-size: 12px;
   margin: 10px auto 15px;

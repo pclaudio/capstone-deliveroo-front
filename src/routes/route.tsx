@@ -12,9 +12,7 @@ const Route = ({
   const isAuthenticated = getIsAuthenticated();
 
   const handleRender = () => {
-    if (isAuthenticated && !isPrivate) {
-      return <Redirect to={"/marketplace"} />;
-    } else if (!isAuthenticated && isPrivate) {
+    if (!isAuthenticated && isPrivate) {
       return <Redirect to={"/login"} />;
     } else {
       return children;

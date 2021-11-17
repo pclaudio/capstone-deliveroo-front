@@ -1,48 +1,34 @@
 import _ from "lodash";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { useToken } from "../Token";
+import { useUser } from "../User";
+import { useLocalStorage } from "../LocalStorage";
+import { useFetch } from "../Fetch";
 import { AxiosResponse } from "axios";
 import { postLogin } from "../../services/api";
-import jwt_decode, { JwtPayload } from "jwt-decode";
-import { NodeProps, UserProps } from "../../globalTypes";
-import { AuthenticationProviderProps, ErrorResponseProps } from "./types";
 import { toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
+import { AxiosErrorResponse, NodeProps, UserProps } from "../../globalTypes";
+import { AuthenticationProviderProps } from "./types";
 
 const AuthenticationContext = createContext<AuthenticationProviderProps>(
   {} as AuthenticationProviderProps
 );
 
-const getLocalStorageToken = (): string => {
-  const localStorageToken: string = localStorage.getItem("@MP/token") || "";
-
-  const expiration: number =
-    (!!localStorageToken && jwt_decode<JwtPayload>(localStorageToken).exp) || 0;
-
-  const isExpired = Date.now() >= expiration * 1000;
-
-  if (isExpired) {
-    localStorage.removeItem("MP/token");
-    localStorage.removeItem("MP/user");
-    return "";
-  }
-
-  return localStorageToken;
-};
-
-const getLocalStorageUser = (): UserProps => {
-  const localStorageUser: string = localStorage.getItem("@MP/user") || "";
-
-  return !!localStorageUser ? JSON.parse(localStorageUser) : "";
-};
-
 export const AuthenticationProvider = ({
   children,
 }: NodeProps): JSX.Element => {
-  const [token, setToken] = useState<string>(getLocalStorageToken());
+  const { handleSetToken } = useToken();
 
-  const [user, setUser] = useState<UserProps>(getLocalStorageUser());
+  const { handleSetUser } = useUser();
 
-  const [isFetching, setIsFetching] = useState<boolean>(false);
+  const { clearLocalStorage, getLocalStorageToken, getLocalStorageUser } =
+    useLocalStorage();
+
+  const { handleStartFetching, handleFinishFetching } = useFetch();
+
+  const history = useHistory();
 
   const getIsAuthenticated = (): boolean => {
     const localStorageToken: string = getLocalStorageToken();
@@ -51,40 +37,31 @@ export const AuthenticationProvider = ({
     return !!localStorageToken && !_.isEmpty(localStorageUser);
   };
 
-  const setTokenAndUser = (response: AxiosResponse): void => {
-    localStorage.setItem("@MP/token", response.data.accessToken);
-    localStorage.setItem("@MP/user", JSON.stringify(response.data.user));
-    setToken(response.data.accessToken);
-    setUser(response.data.user);
-  };
-
   const handleLogin = (userLogin: UserProps): void => {
-    setIsFetching(true);
+    handleStartFetching();
 
     postLogin(userLogin)
-      .then((response: AxiosResponse) => {
-        setTokenAndUser(response);
-        setIsFetching(false);
+      .then(({ data }: AxiosResponse) => {
+        handleSetToken(data.accessToken);
+        handleSetUser(data.user);
+        handleFinishFetching();
+        history.push("/marketplace");
       })
-      .catch((error: ErrorResponseProps) => {
+      .catch((error: AxiosErrorResponse) => {
         toast.error(error.response?.data, toastOptions);
-        setIsFetching(false);
+        handleFinishFetching();
       });
   };
 
   const handleLogout = (): void => {
-    localStorage.removeItem("@MP/token");
-    localStorage.removeItem("@MP/user");
-    setToken("");
-    setUser({} as UserProps);
+    handleSetToken("");
+    handleSetUser({} as UserProps);
+    clearLocalStorage();
   };
 
   return (
     <AuthenticationContext.Provider
       value={{
-        token,
-        user,
-        isFetching,
         getIsAuthenticated,
         handleLogin,
         handleLogout,
@@ -95,4 +72,5 @@ export const AuthenticationProvider = ({
   );
 };
 
-export const useAuthentication = () => useContext(AuthenticationContext);
+export const useAuthentication = (): AuthenticationProviderProps =>
+  useContext(AuthenticationContext);

@@ -1,4 +1,5 @@
 import { useAuthentication } from "../../providers/Authentication";
+import { useFetch } from "../../providers/Fetch";
 import { UserProps } from "../../globalTypes";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -21,7 +22,9 @@ import {
 } from "./styles";
 
 const Login = (): JSX.Element => {
-  const { isFetching, handleLogin } = useAuthentication();
+  const { handleLogin } = useAuthentication();
+
+  const { isFetching } = useFetch();
 
   const {
     register,

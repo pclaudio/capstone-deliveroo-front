@@ -5,6 +5,7 @@ export interface ListContextData {
   list: IResponseLogin[];
   ProductsMarket: (id: number) => void;
   setListProducts: (item: any) => void;
+  MarketPlace: (item: any) => void;
 }
 export interface IListProducts {
   description: string;

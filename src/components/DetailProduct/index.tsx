@@ -1,5 +1,6 @@
 import { useCart } from "../../providers/CartProvider";
 import { useDetails } from "../../providers/DetailsProvider";
+import { AddAvailable, InforProduct } from "../Available";
 
 function DetailProduct() {
   const { detail, setDetail } = useDetails();
@@ -14,8 +15,9 @@ function DetailProduct() {
             <img src={item.image} alt={item.name} />
             <p>{item.name}</p>
             <p>{item.description}</p>
-
             <span>{item.price}</span>
+            <InforProduct />
+            <AddAvailable />
             <button onClick={() => moveToCart(item)}>add To Cart</button>
             <button onClick={() => setDetail([])}>Voltar</button>
           </>

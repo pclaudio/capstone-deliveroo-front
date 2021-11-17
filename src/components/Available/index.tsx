@@ -1,11 +1,18 @@
+import { useAvailable } from "../../providers/AvailableProvider";
+
 export const InforProduct = () => {
+  const { feedProduct } = useAvailable();
   return (
     <div>
       <ul>
-        <li>
-          <span>as estrelinhas</span>
-          <p>Comentario vai aki</p>
-        </li>
+        {feedProduct.map((feed) => {
+          return (
+            <li key={feed.id}>
+              <span>{feed.avaliation}</span>
+              <p>{feed.description}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

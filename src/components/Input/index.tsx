@@ -14,8 +14,8 @@ const Input = ({
 }: InputProps): JSX.Element => {
   return (
     <Container>
-      <div>
-        {label} {!!error && <span> - {error}</span>}
+      <div id="errorStack">
+        {label} {!!error && <span>{error}</span>}
       </div>
 
       <InputContainer isErrored={!!error} isRight={isRight} isGlass={!!isGlass}>

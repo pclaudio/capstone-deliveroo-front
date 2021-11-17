@@ -4,6 +4,9 @@ import { ContainerProps } from "./types";
 export const Container = styled.div`
   text-align: left;
 
+  #errorStack {
+    height: 20px;
+  }
   div {
     span {
       color: #f00;

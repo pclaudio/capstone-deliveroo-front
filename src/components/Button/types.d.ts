@@ -4,11 +4,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   disable?: boolean;
   medium?: boolean;
-  full?: boolean;
+  short?: boolean;
 }
 
 interface ContainerProps {
   disable: boolean;
   medium: boolean;
-  full: boolean;
+  short: boolean;
 }

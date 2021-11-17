@@ -4,9 +4,9 @@ import {
   ProfileRegisterContainer,
   RegisterProfileContainer,
   RegisterProfileWrapp,
-} from "./styles";
+} from "./style";
 import Button from "../Button";
-import { useAuthentication } from "../../providers/Authentication";
+import { useStep } from "../../providers/Step";
 
 interface Props {
   form?: string;
@@ -15,11 +15,15 @@ interface Props {
 }
 
 export default function Wireframe({ func, form, children }: Props) {
-  const { previousStep } = useAuthentication();
+  const { handleStepDecrementation } = useStep();
   return (
     <ProfileRegisterContainer>
       <RegisterProfileContainer>
-        <Button short className="marginButton" onClick={previousStep}>
+        <Button
+          short
+          className="marginButton"
+          onClick={handleStepDecrementation}
+        >
           <HiChevronLeft />
         </Button>
         <RegisterProfileWrapp>{children}</RegisterProfileWrapp>

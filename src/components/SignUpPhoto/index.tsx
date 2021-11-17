@@ -22,8 +22,12 @@ const SignUpPhoto = (): JSX.Element => {
       photo.append("image", event.target.files[0]);
 
       postPhoto(photo)
-        .then(({ data: { id, deletehash, link } }: AxiosResponse) => {
-          setPhoto({ id, deletehash, link });
+        .then(({ data: { data } }: AxiosResponse) => {
+          setPhoto({
+            id: data.id,
+            deletehash: data.deletehash,
+            link: data.link,
+          });
           handleFinishFetching();
         })
         .catch((error: AxiosErrorResponse) => {

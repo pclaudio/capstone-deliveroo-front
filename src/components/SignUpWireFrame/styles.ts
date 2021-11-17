@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { styled as muiStyled } from "@mui/material/styles";
+import {
+  CircularProgress as MuiCircularProgress,
+  CircularProgressProps,
+} from "@mui/material";
 import bgimg from "../../assets/img/Pattern.svg";
 
 export const MainContainer = styled.div`
@@ -59,3 +64,9 @@ export const H66WireFrame = styled.h6`
   color: back;
   margin: 20px 10px;
 `;
+
+export const CircularProgress = muiStyled(
+  MuiCircularProgress
+)<CircularProgressProps>(({ theme }) => ({
+  color: "rgba(83, 232, 139)",
+}));

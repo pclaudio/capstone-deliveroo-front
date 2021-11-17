@@ -10,13 +10,17 @@ import google from "../../assets/img/google.png";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import {
-  LoginContainer,
-  MainLoginContainer,
+  Container,
+  MainContainer,
   Logo,
   H6,
   Icon,
   H66,
   CircularProgress,
+  ContainerWrapp,
+  Form,
+  ButtonContainer,
+  SocialContainer,
 } from "./styles";
 
 const Login = (): JSX.Element => {
@@ -39,68 +43,66 @@ const Login = (): JSX.Element => {
   };
 
   return (
-    <MainLoginContainer>
-      <div id="box">
-        <Logo src={logo} />
+    <MainContainer>
+      <div>
+        <div id="box">
+          <Logo src={logo} />
+        </div>
+        <h3>Login To Your Account</h3>
       </div>
-
-      <h3>Login To Your Account</h3>
-
-      <LoginContainer>
-        <div id="loginContent">
-          <form
+      <Container>
+        <ContainerWrapp>
+          <Form
+            id="formL"
             autoComplete="off"
-            className="inputsContainer"
             onSubmit={handleSubmit(handleLoginSubmit)}
           >
-            <div className="inputsContainer">
-              <div className="inputContainer">
-                <Input
-                  type="text"
-                  placeholder="Email *"
-                  name="email"
-                  register={register}
-                />
-                <label className="errorLabel">{errors.email?.message}</label>
-              </div>
+            <Input
+              type="email"
+              placeholder="Email *"
+              register={register}
+              name="email"
+              img={require("../../assets/img/Message.svg").default}
+              error={errors.email?.message}
+            />
 
-              <div className="inputContainer">
-                <Input
-                  type="password"
-                  placeholder="Password *"
-                  name="password"
-                  register={register}
-                />
-                <label className="errorLabel">{errors.password?.message}</label>
-              </div>
-            </div>
+            <Input
+              type="password"
+              placeholder="Password *"
+              register={register}
+              name="password"
+              img={require("../../assets/img/Lock.svg").default}
+              error={errors.password?.message}
+            />
+          </Form>
+        </ContainerWrapp>
+      </Container>
+      <H6>Or Continue With</H6>
 
-            <H6>Or Continue With</H6>
+      <SocialContainer>
+        <Button className="faceGoogle">
+          <Icon src={face} /> Facebook
+        </Button>
 
-            <div className="loginFaceGoogle">
-              <Button className="faceGoogle">
-                <Icon src={face} /> Facebook
-              </Button>
+        <Button className="faceGoogle">
+          <Icon src={google} /> Google
+        </Button>
+      </SocialContainer>
 
-              <Button className="faceGoogle">
-                <Icon src={google} /> Google
-              </Button>
-            </div>
-
-            <H66>Forgot Your Password?</H66>
-
-            {isFetching ? (
-              <Button type="submit" disable>
-                <CircularProgress size={28} />
-              </Button>
-            ) : (
-              <Button type="submit">Logar</Button>
-            )}
-            <H66>don’t have an account?</H66>
-          </form>
-        </div>
-      </LoginContainer>
-    </MainLoginContainer>
+      <ButtonContainer>
+        <H66 to="/">Forgot Your Password?</H66>
+        {isFetching ? (
+          <Button type="submit" disable>
+            <CircularProgress size={28} />
+          </Button>
+        ) : (
+          <Button form="formL" type="submit">
+            Logar
+          </Button>
+        )}
+        <H66 to="/signup">don’t have an account?</H66>
+      </ButtonContainer>
+    </MainContainer>
   );
 };
 

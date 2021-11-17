@@ -2,8 +2,14 @@ import React from "react";
 import { HiChevronLeft } from "react-icons/hi";
 import Button from "../Button";
 import { useStep } from "../../providers/Step";
-import { Container, ContainerWrapp, MainContainer } from "./styles";
+import {
+  CircularProgress,
+  Container,
+  ContainerWrapp,
+  MainContainer,
+} from "./styles";
 import { WireFrameProps } from "./types";
+import { useFetch } from "../../providers/Fetch";
 
 export default function Wireframe({
   func,
@@ -11,6 +17,7 @@ export default function Wireframe({
   children,
   btnText = "next",
 }: WireFrameProps) {
+  const { isFetching } = useFetch();
   const { handleStepDecrementation } = useStep();
   return (
     <MainContainer>
@@ -24,14 +31,20 @@ export default function Wireframe({
         </Button>
         <ContainerWrapp>{children}</ContainerWrapp>
       </Container>
-      <Button
-        form={form}
-        onClick={func}
-        className="marginButtonBotton"
-        type="submit"
-      >
-        {btnText}
-      </Button>
+      {isFetching ? (
+        <Button type="submit" disable>
+          <CircularProgress size={28} />
+        </Button>
+      ) : (
+        <Button
+          form={form}
+          onClick={func}
+          className="marginButtonBotton"
+          type="submit"
+        >
+          {btnText}
+        </Button>
+      )}
     </MainContainer>
   );
 }

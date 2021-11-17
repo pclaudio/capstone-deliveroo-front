@@ -5,7 +5,12 @@ import { useStep } from "../../providers/Step";
 import { Container, ContainerWrapp, MainContainer } from "./styles";
 import { WireFrameProps } from "./types";
 
-export default function Wireframe({ func, form, children }: WireFrameProps) {
+export default function Wireframe({
+  func,
+  form,
+  children,
+  btnText = "next",
+}: WireFrameProps) {
   const { handleStepDecrementation } = useStep();
   return (
     <MainContainer>
@@ -25,7 +30,7 @@ export default function Wireframe({ func, form, children }: WireFrameProps) {
         className="marginButtonBotton"
         type="submit"
       >
-        Next
+        {btnText}
       </Button>
     </MainContainer>
   );

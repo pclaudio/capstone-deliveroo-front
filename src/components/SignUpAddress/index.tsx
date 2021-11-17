@@ -89,17 +89,17 @@ const SignUpAddress = (): JSX.Element => {
   };
 
   const handleSignUpAddressSubmit = (address: AddressProps): void => {
-    console.log(address);
     handleSignUpAddress(address);
   };
 
   return (
-    <Wireframe>
+    <Wireframe form="form5">
       <h1>Fill in your bio to get started</h1>
       <H66WireFrame>
         This data will be displayed in your account profile for security
       </H66WireFrame>
       <FormAdress
+        id="form5"
         autoComplete="off"
         onSubmit={handleSubmit(handleSignUpAddressSubmit)}
       >
@@ -161,10 +161,6 @@ const SignUpAddress = (): JSX.Element => {
           name="state"
           register={register}
         />
-
-        <button type="submit" disabled={isFetching}>
-          Next
-        </button>
       </FormAdress>
     </Wireframe>
   );

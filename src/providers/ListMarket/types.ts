@@ -24,6 +24,7 @@ export interface IResponseLogin {
   location: string;
   store: boolean;
   id: number;
+  price?: number;
 }
 export interface IChildren {
   children: ReactNode;

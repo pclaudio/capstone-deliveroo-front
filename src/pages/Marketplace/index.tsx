@@ -22,11 +22,11 @@ const Marketplace = (): JSX.Element => {
     <>
       <h1>Marketplace</h1>
       <button onClick={handleLogoutClick}>Sair</button>
-      <div className="container">
-        {list && list.map((item) => CardListMarket(item))}
+      <div>
+        {list.length > 0 ? <CardListMarket /> : ""}
         <br />
 
-        {listProducts.length > 0 ? CardListProduct() : ""}
+        {listProducts.length > 0 ? <CardListProduct /> : ""}
         <br />
 
         {detail.length > 0 ? <DetailProduct /> : ""}

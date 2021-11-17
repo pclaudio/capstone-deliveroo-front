@@ -5,6 +5,8 @@ export interface IChildren {
 }
 
 export interface CartContextData {
+  count: number;
+  setCount: (num: number) => void;
   listCart: IProducts[];
   moveToCart: (item: any) => void;
   removeToCart: (item: any) => void;

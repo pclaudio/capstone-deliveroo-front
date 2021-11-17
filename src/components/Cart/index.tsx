@@ -1,7 +1,8 @@
 import { useCart } from "../../providers/CartProvider";
 
 function Cart() {
-  const { listCart, removeToCart, addItem, subItem } = useCart();
+  const { listCart, removeToCart, addItem, subItem, count } = useCart();
+
   return (
     <div>
       <h2>Carrinho</h2>
@@ -23,6 +24,9 @@ function Cart() {
             </div>
           );
         })}
+      <p>
+        Total: <span>{count.toFixed(2)}</span>
+      </p>
     </div>
   );
 }

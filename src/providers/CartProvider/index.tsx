@@ -6,14 +6,22 @@ export const CartContext = createContext<CartContextData>(
 );
 export const CartProvider = ({ children }: IChildren) => {
   const [listCart, setListCart] = useState<IProducts[]>([] as IProducts[]);
+  const [count, setCount] = useState(0);
+
+  const valorTotal = listCart.reduce((acc, item) => {
+    return item.price + acc;
+  }, 0);
 
   const moveToCart = (item: any) => {
     const repeat = listCart.filter((itemInCart) => itemInCart.id === item.id);
     if (repeat.length === 0) {
       item.amount = 1;
       setListCart([...listCart, item]);
+      setCount(count + item.price);
     } else {
       item.amount = item.amount + 1;
+      setCount(count + item.price);
+
       setListCart([...listCart]);
     }
   };
@@ -23,15 +31,26 @@ export const CartProvider = ({ children }: IChildren) => {
   };
   const addItem = (item: any) => {
     item.amount = item.amount + 1;
+    setCount(count + item.price);
+
     setListCart([...listCart]);
   };
   const subItem = (item: any) => {
     item.amount = item.amount - 1;
+    setCount(count - item.price);
     setListCart([...listCart]);
   };
   return (
     <CartContext.Provider
-      value={{ listCart, moveToCart, removeToCart, addItem, subItem }}
+      value={{
+        count,
+        setCount,
+        listCart,
+        moveToCart,
+        removeToCart,
+        addItem,
+        subItem,
+      }}
     >
       {children}
     </CartContext.Provider>

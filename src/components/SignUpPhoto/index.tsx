@@ -6,6 +6,8 @@ import toastOptions from "../../utils/toastOptions";
 import { useFetch } from "../../providers/Fetch";
 import { useSignUp } from "../../providers/SignUp";
 import { AxiosErrorResponse, PhotoProps } from "../../globalTypes";
+import Wireframe from "../SignUpWireFrame";
+import { H66WireFrame } from "../SignUpWireFrame/styles";
 
 const SignUpPhoto = (): JSX.Element => {
   const { isFetching, handleStartFetching, handleFinishFetching } = useFetch();
@@ -39,7 +41,11 @@ const SignUpPhoto = (): JSX.Element => {
   };
 
   return (
-    <>
+    <Wireframe>
+      <h1>Upload Your Photo Profile</h1>
+      <H66WireFrame>
+        This data will be displayed in your account profile for security
+      </H66WireFrame>
       <div>
         <input
           type="file"
@@ -51,7 +57,7 @@ const SignUpPhoto = (): JSX.Element => {
       <button disabled={isFetching} onClick={handleSignUpPhotoSubmit}>
         Next
       </button>
-    </>
+    </Wireframe>
   );
 };
 

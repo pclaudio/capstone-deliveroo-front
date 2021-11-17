@@ -8,6 +8,7 @@ import { AuthenticationProvider } from "./Authentication";
 import { SignUpProvider } from "./SignUp";
 import { ListProvider } from "./ListMarket";
 import { DetailsProvider } from "./DetailsProvider";
+import { CartProvider } from "./CartProvider";
 
 const Providers = ({ children }: NodeProps): JSX.Element => {
   return (
@@ -19,7 +20,9 @@ const Providers = ({ children }: NodeProps): JSX.Element => {
               <AuthenticationProvider>
                 <SignUpProvider>
                   <DetailsProvider>
-                    <ListProvider>{children}</ListProvider>
+                    <CartProvider>
+                      <ListProvider>{children}</ListProvider>
+                    </CartProvider>
                   </DetailsProvider>
                 </SignUpProvider>
               </AuthenticationProvider>

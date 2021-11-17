@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
 import { AxiosErrorResponse, NodeProps, UserProps } from "../../globalTypes";
 import { AuthenticationProviderProps } from "./types";
+import { useListMarket } from "../ListMarket";
 
 const AuthenticationContext = createContext<AuthenticationProviderProps>(
   {} as AuthenticationProviderProps

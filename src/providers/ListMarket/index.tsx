@@ -19,6 +19,11 @@ export const ListProvider = ({ children }: IChildren) => {
   const [list, setList] = useState<IResponseLogin[]>([] as IResponseLogin[]);
 
   const { token } = useToken();
+
+  useEffect(() => {
+    MarketPlace();
+  }, [list]);
+
   const MarketPlace = async () => {
     await axios
       .get("https://json-capstone.herokuapp.com/users/?store=true", {
@@ -29,8 +34,6 @@ export const ListProvider = ({ children }: IChildren) => {
       })
       .catch((err) => console.log(err));
   };
-  MarketPlace();
-
   const ProductsMarket = async (id: number) => {
     await axios
       .get(`https://json-capstone.herokuapp.com/users/${id}?_embed=products`, {
@@ -44,7 +47,12 @@ export const ListProvider = ({ children }: IChildren) => {
   };
   return (
     <ListContext.Provider
-      value={{ setListProducts, listProducts, ProductsMarket, list }}
+      value={{
+        setListProducts,
+        listProducts,
+        ProductsMarket,
+        list,
+      }}
     >
       {children}
     </ListContext.Provider>

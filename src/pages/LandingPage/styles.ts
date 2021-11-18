@@ -35,10 +35,13 @@ export const ButtonCountainer = styled.div`
 
   .button1 {
     margin-top: 10px;
+    margin-left: 10px;
+    width: 140px;
   }
 
   .button2 {
-    margin-top: 50px;
+    position:fixed;
+    bottom:40px;
     width: 85px;
     height: 25px;
   }
@@ -49,9 +52,9 @@ export const H3 = styled.h3`
 `;
 
 export const Logo = styled.img`
-  display: block;
-  width: 40vh;
-  margin: 0 auto;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
 `;
 
 export const CircularProgress = muiStyled(

@@ -1,6 +1,8 @@
 import { Switch } from "react-router-dom";
 import Route from "./route";
 import Home from "../pages/Home";
+import LandingPage from "../pages/LandingPage";
+import OurTeam from "../pages/OurTeam";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Marketplace from "../pages/Marketplace";
@@ -10,6 +12,14 @@ const Routes = (): JSX.Element => {
     <Switch>
       <Route exact path="/">
         <Home />
+      </Route>
+
+      <Route path="/landingpage">
+        <LandingPage />
+      </Route>
+
+      <Route path="/ourteam">
+        <OurTeam />
       </Route>
 
       <Route path="/login">

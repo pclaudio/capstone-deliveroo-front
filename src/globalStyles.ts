@@ -25,11 +25,13 @@ export default createGlobalStyle`
     --success: #168821;
     --warning: #FFCD07;
     --error: #E60000;
+    --background-color: #FEFEFF
 }
 
 body {
     background-attachment: fixed;
     color: var(--grey-600);
+    background-color: var(--background-color);
     height: 100%;
 }
 

@@ -1,7 +1,7 @@
 import { useAvailable } from "../../providers/AvailableProvider";
 import { useCart } from "../../providers/CartProvider";
 import { useDetails } from "../../providers/DetailsProvider";
-import { AddAvailable, InforProduct } from "../Available";
+import InforProduct from "../Available";
 
 function DetailProduct() {
   const { detail, setDetail } = useDetails();

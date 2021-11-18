@@ -69,15 +69,17 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .catch((err) => console.log(err));
   };
 
-  const getPayment = () => {
-    axios
+  const getPayment = async () => {
+    await axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=payments`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       )
-      .then(({ data }) => setPayment([...data.payments]))
+      .then(({ data }) => {
+        setPayment([...data.payments]);
+      })
       .catch((err) => console.log(err));
   };
 

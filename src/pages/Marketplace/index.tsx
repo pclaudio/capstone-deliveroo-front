@@ -2,6 +2,8 @@ import CardListMarket from "../../components/CardListMarket";
 import CardListProduct from "../../components/CardListProducts";
 import Cart from "../../components/Cart";
 import DetailProduct from "../../components/DetailProduct";
+import MyComponent from "../../components/Maps";
+import Payment from "../../components/Payment";
 import PerfilUser from "../../components/PerfilUser";
 import { useAuthentication } from "../../providers/Authentication";
 import Menu from "../../components/Menu";
@@ -24,7 +26,7 @@ const Marketplace = (): JSX.Element => {
     <>
       <Menu />
       <button onClick={handleLogoutClick}>Sair</button>
-      {/* <div>
+      <div>
         {list.length > 0 ? <CardListMarket /> : ""}
         <br />
 
@@ -35,8 +37,10 @@ const Marketplace = (): JSX.Element => {
         <br />
 
         {listCart.length > 0 ? <Cart /> : ""}
-      </div> */}
-      <PerfilUser />
+      </div>
+      {/* <PerfilUser />
+      <Payment />
+      <MyComponent /> */}
     </>
   );
 };

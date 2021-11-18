@@ -1,0 +1,18 @@
+.map {
+  height: 400px;
+  width: 400px;
+}
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: rgb(0, 30, 255);
+  border: 2px solid #fff;
+  border-radius: 100%;
+  user-select: none;
+}
+.marker:hover {
+  z-index: 1;
+}

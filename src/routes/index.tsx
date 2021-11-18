@@ -6,6 +6,7 @@ import OurTeam from "../pages/OurTeam";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Marketplace from "../pages/Marketplace";
+import { Teste } from "../pages/teste";
 
 const Routes = (): JSX.Element => {
   return (
@@ -32,6 +33,9 @@ const Routes = (): JSX.Element => {
 
       <Route path="/marketplace" isPrivate>
         <Marketplace />
+      </Route>
+      <Route path="/teste" isPrivate>
+        <Teste />
       </Route>
     </Switch>
   );

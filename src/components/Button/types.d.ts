@@ -5,10 +5,12 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disable?: boolean;
   medium?: boolean;
   short?: boolean;
+  white?: boolean;
 }
 
 export interface ContainerProps {
   disable: boolean;
   medium: boolean;
   short: boolean;
+  white?: boolean;
 }

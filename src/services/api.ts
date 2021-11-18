@@ -21,11 +21,11 @@ const api: AxiosInstance = axios.create({
   responseType: "json",
 });
 
-const genericGet = ({ url = "" }: AxiosRequestConfig): Promise<any> => {
-  const headers: AxiosRequestConfig = getHeaders();
+// const genericGet = ({ url = "" }: AxiosRequestConfig): Promise<any> => {
+//   const headers: AxiosRequestConfig = getHeaders();
 
-  return api.get(url, headers);
-};
+//   return api.get(url, headers);
+// };
 
 const genericPost = ({ url = "", data }: AxiosRequestConfig): Promise<any> => {
   const headers: AxiosRequestConfig = getHeaders();
@@ -33,11 +33,11 @@ const genericPost = ({ url = "", data }: AxiosRequestConfig): Promise<any> => {
   return api.post(url, data, headers);
 };
 
-const genericPatch = ({ url = "", data }: AxiosRequestConfig): Promise<any> => {
-  const headers: AxiosRequestConfig = getHeaders();
+// const genericPatch = ({ url = "", data }: AxiosRequestConfig): Promise<any> => {
+//   const headers: AxiosRequestConfig = getHeaders();
 
-  return api.patch(url, data, headers);
-};
+//   return api.patch(url, data, headers);
+// };
 
 export const postLogin = (data: UserProps): Promise<any> => {
   const url = "/login";

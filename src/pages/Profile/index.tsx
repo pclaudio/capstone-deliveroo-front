@@ -1,9 +1,6 @@
-import Menu from "../../components/Menu";
+import PerfilUser from "../../components/PerfilUser";
 import { useAuthentication } from "../../providers/Authentication";
-import {
-  MainLoginContainer,
-  H1
-} from "./styles";
+import Menu from "../../components/Menu";
 
 const Marketplace = (): JSX.Element => {
   const { handleLogout } = useAuthentication();
@@ -13,11 +10,20 @@ const Marketplace = (): JSX.Element => {
   };
 
   return (
-      <MainLoginContainer id="box">
-        <H1>Perfil</H1>
-            <button onClick={handleLogoutClick}> sair </button>
-        <Menu />
-      </MainLoginContainer>
+    <>
+      <Menu />
+      <button onClick={handleLogoutClick}>Sair</button>
+      {/* <div>
+        {list.length > 0 ? <CardListMarket /> : ""}
+        <br />
+        {listProducts.length > 0 ? <CardListProduct /> : ""}
+        <br />
+        {detail.length > 0 ? <DetailProduct /> : ""}
+        <br />
+        {listCart.length > 0 ? <Cart /> : ""}
+      </div> */}
+      <PerfilUser />
+    </>
   );
 };
 

@@ -24,9 +24,11 @@ function DetailProduct() {
             <p>{item.description}</p>
             <span>{item.price}</span>
             <div>
-              <span onClick={() => setWindowFeed(!windowFeed)}>
-                comentarios: {feedProduct.length}
-              </span>
+              <button onClick={() => setWindowFeed(!windowFeed)}>
+                Visualizar feedbacks
+              </button>
+
+              <span>Qntd: {feedProduct.length}</span>
               <span>
                 Ultima Nota:
                 {feedProduct.length > 0

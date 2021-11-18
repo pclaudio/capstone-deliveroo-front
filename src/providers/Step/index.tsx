@@ -11,8 +11,14 @@ export const StepProvider = ({ children }: NodeProps): JSX.Element => {
     setStep(step + 1);
   };
 
+  const handleStepDecrementation = (): void => {
+    setStep(step - 1);
+  };
+
   return (
-    <StepContext.Provider value={{ step, handleStepIncrementation }}>
+    <StepContext.Provider
+      value={{ step, handleStepIncrementation, handleStepDecrementation }}
+    >
       {children}
     </StepContext.Provider>
   );

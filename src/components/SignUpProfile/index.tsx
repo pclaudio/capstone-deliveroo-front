@@ -3,6 +3,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "./schema";
 import { useSignUp } from "../../providers/SignUp";
 import { ProfileProps } from "../../globalTypes";
+import Wireframe from "../SignUpWireFrame";
+import { FormWireFrame, H66WireFrame } from "../SignUpWireFrame/styles";
+import Input from "../Input";
 
 const SignUpProfile = (): JSX.Element => {
   const { handleSignUpProfile } = useSignUp();
@@ -20,35 +23,43 @@ const SignUpProfile = (): JSX.Element => {
   };
 
   return (
-    <>
-      <form
+    <Wireframe form="form2">
+      <h1>Fill in your bio to get started</h1>
+
+      <H66WireFrame>
+        This data will be displayed in your account profile for security
+      </H66WireFrame>
+
+      <FormWireFrame
+        id="form2"
         autoComplete="off"
         onSubmit={handleSubmit(handleSignUpProfileSubmit)}
       >
-        <input
+        <Input
           type="text"
+          name="firstName"
           placeholder="First Name *"
-          {...register("firstName")}
+          register={register}
+          error={errors.firstName?.message}
         />
-        <p>{errors.firstName?.message}</p>
 
-        <input
+        <Input
           type="text"
+          name="lastName"
           placeholder="Last Name *"
-          {...register("lastName")}
+          register={register}
+          error={errors.lastName?.message}
         />
-        <p>{errors.lastName?.message}</p>
 
-        <input
+        <Input
           type="tel"
-          placeholder="Mobile Number"
-          {...register("mobileNumber")}
+          placeholder="Mobile Number *"
+          name="mobileNumber"
+          register={register}
+          error={errors.mobileNumber?.message}
         />
-        <p>{errors.mobileNumber?.message}</p>
-
-        <button type="submit">Next</button>
-      </form>
-    </>
+      </FormWireFrame>
+    </Wireframe>
   );
 };
 

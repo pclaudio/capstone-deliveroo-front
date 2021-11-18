@@ -9,6 +9,11 @@ import { getAddressByCep } from "../../services/apiCep";
 import { toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
 import { AddressProps, AxiosErrorResponse } from "../../globalTypes";
+import Wireframe from "../SignUpWireFrame";
+import Input from "../Input";
+import "./styles";
+import { FormAdress } from "./styles";
+import { H66WireFrame } from "../SignUpWireFrame/styles";
 
 const emptyAddress: AddressProps = {
   cep: "",
@@ -21,7 +26,7 @@ const emptyAddress: AddressProps = {
 const SignUpAddress = (): JSX.Element => {
   const { handleSignUpAddress } = useSignUp();
 
-  const { isFetching, handleStartFetching, handleFinishFetching } = useFetch();
+  const { handleStartFetching, handleFinishFetching } = useFetch();
 
   const [address, setAddress] = useState<AddressProps>(emptyAddress);
 
@@ -87,58 +92,78 @@ const SignUpAddress = (): JSX.Element => {
   };
 
   return (
-    <>
-      <form
+    <Wireframe form="form5">
+      <h1>Fill in your bio to get started</h1>
+
+      <H66WireFrame>
+        This data will be displayed in your account profile for security
+      </H66WireFrame>
+
+      <FormAdress
+        id="form5"
         autoComplete="off"
         onSubmit={handleSubmit(handleSignUpAddressSubmit)}
       >
-        <div>
-          <input
-            placeholder="CEP *"
-            maxLength={8}
-            name={cep.name}
-            ref={cep.ref}
-            onBlur={cep.onBlur}
-            onChange={handleGetAddressByCep}
-          />
-          <p>{errors.cep?.message}</p>
-        </div>
+        <Input
+          error={errors.cep?.message}
+          placeholder="CEP *"
+          maxLength={8}
+          name={cep.name}
+          onBlur={cep.onBlur}
+          onChange={handleGetAddressByCep}
+          register={register}
+        />
 
-        <div>
-          <input readOnly placeholder="Address 1 *" {...register("address1")} />
-          <p>{errors.address1?.message}</p>
-        </div>
+        <Input
+          error={errors.address1?.message}
+          readOnly
+          placeholder="Address 1 *"
+          name="address1"
+          register={register}
+        />
 
-        <div>
-          <input placeholder="Address 2" {...register("address2")} />
-          <p>{errors.address2?.message}</p>
-        </div>
+        <Input
+          error={errors.address2?.message}
+          placeholder="Address 2"
+          name="address2"
+          register={register}
+        />
 
-        <div>
-          <input placeholder="Number *" {...register("number")} />
-          <p>{errors.number?.message}</p>
-        </div>
+        <Input
+          error={errors.number?.message}
+          placeholder="Number *"
+          name="number"
+          register={register}
+        />
 
-        <div>
-          <input readOnly placeholder="District *" value={address.district} />
-          <p>{errors.district?.message}</p>
-        </div>
+        <Input
+          error={errors.district?.message}
+          readOnly
+          placeholder="District *"
+          value={address.district}
+          name="district"
+          register={register}
+        />
 
-        <div>
-          <input readOnly placeholder="City *" value={address.city} />
-          <p>{errors.city?.message}</p>
-        </div>
+        <Input
+          error={errors.city?.message}
+          readOnly
+          placeholder="City *"
+          value={address.city}
+          name="city"
+          register={register}
+        />
 
-        <div>
-          <input readOnly placeholder="State *" value={address.state} />
-          <p>{errors.state?.message}</p>
-        </div>
-
-        <button type="submit" disabled={isFetching}>
-          Next
-        </button>
-      </form>
-    </>
+        <Input
+          error={errors.state?.message}
+          readOnly
+          placeholder="State *"
+          value={address.state}
+          name="state"
+          register={register}
+        />
+      </FormAdress>
+    </Wireframe>
   );
 };
 

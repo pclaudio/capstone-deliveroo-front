@@ -3,12 +3,12 @@ import { ContainerProps } from "./types";
 
 export const Container = styled.button<ContainerProps>`
   height: ${(props) => (props.medium ? 40 : 57)}px;
-  width: ${(props) => (props.full ? "100%" : "157px")};
+  width: ${(props) => (props.short ? "57px" : "157px")};
   border: none;
   border-radius: 15px;
   background: ${(props) =>
-    props.disable ? "var(--grey-100)" : "var(--primary-color)"};
-  color: ${(props) => (props.disable ? "var(--grey-300)" : "white")};
+    props.short ? "rgba(249, 168, 77, 0.3)" : "var(--primary-color)"};
+  color: ${(props) => (props.short ? "#DA6317" : "white")};
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;

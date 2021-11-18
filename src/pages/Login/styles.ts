@@ -5,21 +5,30 @@ import {
   CircularProgress as MuiCircularProgress,
   CircularProgressProps,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
-export const MainLoginContainer = styled.div`
+export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  height: 100vh;
   background-image: linear-gradient(
       to bottom,
       rgba(245, 246, 252, 0.2),
+      rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
+
   #box {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 20px;
+  }
+
+  h3 {
+    text-align: center;
   }
 `;
 
@@ -28,10 +37,14 @@ export const Icon = styled.img`
   margin-right: 10px;
 `;
 
-export const H66 = styled.h6`
+export const H66 = styled(Link)`
   font-weight: normal;
-  margin: 20px auto 20px;
-  color: #1DB46B;
+  font-size: 12px;
+  margin: 10px auto 15px;
+  background: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 export const H6 = styled.h6`
@@ -52,66 +65,52 @@ export const BgImg = styled.img`
   width: 100vw;
 `;
 
-export const LoginContainer = styled.div`
+export const ContainerWrapp = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+`;
+
+export const Container = styled.div`
   max-width: 500px;
   width: 100%;
   min-width: 300px;
+`;
 
-  .faceGoogle {
-    background: var(--white);
-    border: 1px solid #80808036;
-    color: black;
-    font-size: 15px;
-    font-weight: normal;
+export const SocialContainer = styled.div`
+  display: flex;
+
+  button {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
-    margin-bottom: 15px;
-  }
+    width: 150px;
+    background: var(--white);
+    border: 1px solid #d9d9d9;
+    color: black;
 
-  #loginContent {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px auto;
-
-    .loginFaceGoogle {
-      display: flex;
+    &:nth-child(1) {
+      margin-right: 4px;
     }
 
-    .inputsContainer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .inputContainer {
-      height: 60px;
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto 10px;
-
-      .errorLabel {
-        color: var(--secondary-color);
-      }
-    }
-
-    #cadastroContainer {
-      display: flex;
-      justify-content: space-between;
-
-      a {
-        color: var(--grey-300);
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 22px;
-      }
+    &:nth-child(2) {
+      margin-left: 4px;
     }
   }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Form = styled.form`
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const CircularProgress = muiStyled(

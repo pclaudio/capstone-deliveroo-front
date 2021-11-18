@@ -4,11 +4,24 @@ import { postPhoto } from "../../services/apiImgur";
 import { toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
 import { useFetch } from "../../providers/Fetch";
+import { useStep } from "../../providers/Step";
 import { useSignUp } from "../../providers/SignUp";
 import { AxiosErrorResponse, PhotoProps } from "../../globalTypes";
+import {
+  Container,
+  ContainerWrapp,
+  H66WireFrame,
+  MainContainer,
+} from "../SignUpWireFrame/styles";
+import Button from "../Button";
+import { HiChevronLeft } from "react-icons/hi";
+import { CircularProgress } from "@mui/material";
+import { PhotoContainer } from "./styles";
 
 const SignUpPhoto = (): JSX.Element => {
   const { isFetching, handleStartFetching, handleFinishFetching } = useFetch();
+
+  const { handleStepDecrementation } = useStep();
 
   const { handleSignUpPhoto } = useSignUp();
 
@@ -43,19 +56,47 @@ const SignUpPhoto = (): JSX.Element => {
   };
 
   return (
-    <>
-      <div>
-        <input
-          type="file"
-          accept="image/png, image/jpeg"
-          onChange={handlePhotoChange}
-        />
-      </div>
+    <MainContainer>
+      <Container>
+        <Button
+          short
+          className="marginButton"
+          onClick={handleStepDecrementation}
+        >
+          <HiChevronLeft />
+        </Button>
 
-      <button disabled={isFetching} onClick={handleSignUpPhotoSubmit}>
-        Next
-      </button>
-    </>
+        <ContainerWrapp>
+          <h1>Upload Your Photo Profile</h1>
+
+          <H66WireFrame>
+            This data will be displayed in your account profile for security
+          </H66WireFrame>
+
+          <div>
+            <input
+              type="file"
+              accept="image/png, image/jpeg"
+              onChange={handlePhotoChange}
+            />
+          </div>
+
+          {photo?.link && (
+            <PhotoContainer>
+              <img src={photo.link} alt="User" />;
+            </PhotoContainer>
+          )}
+        </ContainerWrapp>
+      </Container>
+
+      {isFetching ? (
+        <Button disable>
+          <CircularProgress size={28} />
+        </Button>
+      ) : (
+        <Button onClick={handleSignUpPhotoSubmit}>Next</Button>
+      )}
+    </MainContainer>
   );
 };
 

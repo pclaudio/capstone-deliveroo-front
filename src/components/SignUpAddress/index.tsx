@@ -65,6 +65,7 @@ const SignUpAddress = (): JSX.Element => {
 
       getAddressByCep(event.target.value)
         .then(({ data }: AxiosResponse) => {
+          console.log(data);
           setAddress({
             cep: data.cep,
             address1: data.logradouro,

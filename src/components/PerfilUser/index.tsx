@@ -27,7 +27,6 @@ const PerfilUser = () => {
         <img src={item.link} />
       ))}
       <h1>Perfil</h1>
-
       <button onClick={handlePerfil}>Exibir</button>
       {profile.map((item) => {
         return (
@@ -69,8 +68,8 @@ const PerfilUser = () => {
             </p>
           </div>
         );
-        <hr />;
       })}
+      <hr />
       {theme.map((item) => (
         <p>
           Tema Favorito: <b>{item.theme}</b>

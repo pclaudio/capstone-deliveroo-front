@@ -2,6 +2,8 @@ import CardListMarket from "../../components/CardListMarket";
 import CardListProduct from "../../components/CardListProducts";
 import Cart from "../../components/Cart";
 import DetailProduct from "../../components/DetailProduct";
+import MyComponent from "../../components/Maps";
+import Payment from "../../components/Payment";
 import PerfilUser from "../../components/PerfilUser";
 import { useAuthentication } from "../../providers/Authentication";
 import { useCart } from "../../providers/CartProvider";
@@ -36,6 +38,8 @@ const Marketplace = (): JSX.Element => {
         {listCart.length > 0 ? <Cart /> : ""}
       </div> */}
       <PerfilUser />
+      <Payment />
+      <MyComponent />
     </>
   );
 };

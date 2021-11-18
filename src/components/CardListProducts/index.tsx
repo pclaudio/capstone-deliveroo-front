@@ -7,6 +7,12 @@ function CardListProduct() {
   const { listProducts, setListProducts } = useListMarket();
   const { ShowDetailProduct } = useDetails();
   const { moveToCart } = useCart();
+  const { GetProductComent } = useAvailable();
+
+  const showFeed = (id: number) => {
+    ShowDetailProduct(id);
+    GetProductComent(id);
+  };
   return (
     <div className="container">
       <span onClick={() => setListProducts([])}>Voltar</span>
@@ -17,10 +23,8 @@ function CardListProduct() {
             <p>{item.name}</p>
             <img src={item.image} alt={item.name} />
             <p>{item.price}</p>
-            <button onClick={() => ShowDetailProduct(item.id)}>Ver Mais</button>
+            <button onClick={() => showFeed(item.id)}>Ver Mais</button>
             <button onClick={() => moveToCart(item)}>Adcionar ao Carrim</button>
-            <hr />
-
             <hr />
           </div>
         );

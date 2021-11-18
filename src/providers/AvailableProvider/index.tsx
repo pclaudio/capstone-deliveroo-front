@@ -12,7 +12,9 @@ export const AvailableProvider = ({ children }: IChildren) => {
   const [feedProduct, setFeedProduct] = useState<IFeedAvailable[]>(
     [] as IFeedAvailable[]
   );
+  const [windowFeed, setWindowFeed] = useState<boolean>(false);
   const { token } = useToken();
+
   const GetProductComent = (id: number) => {
     axios
       .get(
@@ -21,12 +23,33 @@ export const AvailableProvider = ({ children }: IChildren) => {
           headers: { Authorization: `Bearer ${token}` },
         }
       )
-      .then(({ data }) => setFeedProduct([data.comments]))
+      .then(({ data }) => {
+        setFeedProduct([]);
+        setFeedProduct([...data.comments]);
+        console.log(data.comments);
+      })
+      .catch((err) => console.log(err));
+  };
+  const PostProductComent = (data: IFeedAvailable) => {
+    axios
+      .post("https://json-capstone.herokuapp.com/comments", data, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then(({ data }) => setFeedProduct([...feedProduct, data]))
       .catch((err) => console.log(err));
   };
 
   return (
-    <AvailableContext.Provider value={{ feedProduct, GetProductComent }}>
+    <AvailableContext.Provider
+      value={{
+        PostProductComent,
+        windowFeed,
+        setWindowFeed,
+        setFeedProduct,
+        feedProduct,
+        GetProductComent,
+      }}
+    >
       {children}
     </AvailableContext.Provider>
   );

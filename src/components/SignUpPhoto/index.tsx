@@ -83,7 +83,7 @@ const SignUpPhoto = (): JSX.Element => {
 
           {photo?.link && (
             <PhotoContainer>
-              <img src={photo.link} alt="User" />;
+              <img src={photo.link} alt="User" />
             </PhotoContainer>
           )}
         </ContainerWrapp>

@@ -11,3 +11,9 @@ export const PhotoContainer = styled.div`
     border-radius: 22px;
   }
 `;
+
+export const DivButton = styled.div`
+  .Buttonzin{
+    margin: 25px;
+  }
+`;

@@ -16,7 +16,7 @@ import {
 import Button from "../Button";
 import { HiChevronLeft } from "react-icons/hi";
 import { CircularProgress } from "@mui/material";
-import { PhotoContainer } from "./styles";
+import { PhotoContainer,DivButton } from "./styles";
 
 const SignUpPhoto = (): JSX.Element => {
   const { isFetching, handleStartFetching, handleFinishFetching } = useFetch();
@@ -88,14 +88,15 @@ const SignUpPhoto = (): JSX.Element => {
           )}
         </ContainerWrapp>
       </Container>
-
+            <DivButton>
       {isFetching ? (
         <Button disable>
           <CircularProgress size={28} />
         </Button>
       ) : (
-        <Button onClick={handleSignUpPhotoSubmit}>Next</Button>
+        <Button className="Buttonzin" onClick={handleSignUpPhotoSubmit}>Next</Button>
       )}
+      </DivButton>
     </MainContainer>
   );
 };

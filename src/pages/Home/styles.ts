@@ -16,19 +16,22 @@ export const MainLoginContainer = styled.div`
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
+
   #box {
     display: flex;
     flex-direction: column;
     margin-top: 140px;
   }
 `;
+
 export const ButtonCountainer = styled.div`
   position: fixed;
   bottom: 90px;
-`
+`;
+
 export const H3 = styled.h3`
   margin-top: 60px;
-`
+`;
 
 export const Logo = styled.img`
   display: block;

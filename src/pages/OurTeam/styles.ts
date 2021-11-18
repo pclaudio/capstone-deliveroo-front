@@ -16,6 +16,7 @@ export const MainLoginContainer = styled.div`
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
+
   #box {
     display: flex;
     flex-direction: column;
@@ -30,18 +31,18 @@ export const P = styled.p`
 `;
 
 export const Logo = styled.img`
-    width: 30vh;
+  width: 30vh;
 `;
 
-export const P2 = styled.p `
-    font-size: 12px;
-    width: 150px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    text-align: inherit;
-    display:flex;
-    align-items: center;
-    justify-content: space-evenly;
+export const P2 = styled.p`
+  font-size: 12px;
+  width: 150px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 `;
 
 export const ButtonCountainer = styled.div`
@@ -53,10 +54,12 @@ export const ButtonCountainer = styled.div`
   align-content: space-around;
   position: fixed;
   left: 10px;
-  .button1{
-    margin-top:10px;
+
+  .button1 {
+    margin-top: 10px;
   }
-  .button2{
+
+  .button2 {
     margin-top: 50px;
     width: 85px;
     height: 25px;

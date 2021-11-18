@@ -27,7 +27,12 @@ function DetailProduct() {
               <span onClick={() => setWindowFeed(!windowFeed)}>
                 comentarios: {feedProduct.length}
               </span>
-              <span>Ultima Nota:</span>
+              <span>
+                Ultima Nota:
+                {feedProduct.length > 0
+                  ? feedProduct[feedProduct.length - 1].avaliation
+                  : 0}
+              </span>
               {windowFeed && InforProduct(item.id)}
             </div>
 

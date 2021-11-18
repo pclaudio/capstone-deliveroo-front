@@ -11,10 +11,12 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isGlass?: boolean;
   img?: string;
   ref?: any;
+  xl?: boolean;
 }
 
 export interface ContainerProps {
   isErrored: boolean;
   isRight: boolean;
   isGlass: boolean;
+  isLarge: boolean;
 }

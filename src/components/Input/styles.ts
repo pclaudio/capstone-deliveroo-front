@@ -26,6 +26,12 @@ export const InputContainer = styled.div<ContainerProps>`
   transition: 0.4s;
 
   ${(props) =>
+    props.isLarge &&
+    css`
+      width: 305px;
+    `}
+
+  ${(props) =>
     props.isErrored &&
     css`
       border-color: var(--error);

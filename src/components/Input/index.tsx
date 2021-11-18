@@ -10,6 +10,7 @@ const Input = ({
   register,
   name,
   error = "",
+  xl = false,
 
   ...rest
 }: InputProps): JSX.Element => {
@@ -19,7 +20,12 @@ const Input = ({
         {label} {!!error && <span>{error}</span>}
       </div>
 
-      <InputContainer isErrored={!!error} isRight={isRight} isGlass={!!isGlass}>
+      <InputContainer
+        isLarge={!!xl}
+        isErrored={!!error}
+        isRight={isRight}
+        isGlass={!!isGlass}
+      >
         {Icon && <Icon />}
         {img && <img src={img} alt="Pontos cinza" />}
         <input {...(register && register(name))} {...rest} />

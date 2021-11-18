@@ -18,6 +18,7 @@ export const UserProvider = ({ children }: NodeProps): JSX.Element => {
 
   const handleSetUser = (user: UserProps): void => {
     setUser({ ...user });
+    console.log(user);
   };
 
   return (

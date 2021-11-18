@@ -53,6 +53,6 @@ const SignUpPhoto = (): JSX.Element => {
       </button>
     </>
   );
-};
+}
 
 export default SignUpPhoto;

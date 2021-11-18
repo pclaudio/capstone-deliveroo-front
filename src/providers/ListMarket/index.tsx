@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useToken } from "../Token";
 import {
   IChildren,
@@ -29,7 +29,6 @@ export const ListProvider = ({ children }: IChildren) => {
       })
       .catch((err) => console.log(err));
   };
-  MarketPlace();
 
   const ProductsMarket = async (id: number) => {
     await axios
@@ -41,6 +40,7 @@ export const ListProvider = ({ children }: IChildren) => {
       })
       .catch((err) => console.log(err));
   };
+  useEffect(() => {MarketPlace()}, []);
   return (
     <ListContext.Provider
       value={{ setListProducts, listProducts, ProductsMarket, list }}

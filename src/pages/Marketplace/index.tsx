@@ -3,6 +3,7 @@ import CardListProduct from "../../components/CardListProducts";
 import Cart from "../../components/Cart";
 import Menu from "../../components/Menu";
 import DetailProduct from "../../components/DetailProduct";
+import Search from "../../assets/img/Icon.svg"
 import { useCart } from "../../providers/CartProvider";
 import { useDetails } from "../../providers/DetailsProvider";
 import { useListMarket } from "../../providers/ListMarket";
@@ -35,7 +36,7 @@ const Marketplace = (): JSX.Element => {
             type="text"
             placeholder="What do you want to order?"
             name="filter"
-          />
+            isGlass /> <img src={Search} alt="" />
         <Filter src={configFilter} alt="" />
         </DivFilter>
 

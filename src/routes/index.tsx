@@ -3,6 +3,9 @@ import Route from "./route";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import Profile from "../pages/Profile"
+import Chat from "../pages/Chat"
+import Cart from "../pages/Cart"
 import Marketplace from "../pages/Marketplace";
 
 const Routes = (): JSX.Element => {
@@ -22,6 +25,18 @@ const Routes = (): JSX.Element => {
 
       <Route path="/marketplace" isPrivate>
         <Marketplace />
+      </Route>
+
+      <Route path="/profile" isPrivate>
+        <Profile />
+      </Route>
+
+      <Route path="/chat" isPrivate>
+        <Chat />
+      </Route>
+
+      <Route path="/cart" isPrivate>
+        <Cart />
       </Route>
     </Switch>
   );

@@ -49,6 +49,9 @@ export const DivFilter = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: space-around;
+    .buscaColorida{
+        background-color: #f9a84d4f;
+    }
 `;
 
 export const Grocery =styled.div `

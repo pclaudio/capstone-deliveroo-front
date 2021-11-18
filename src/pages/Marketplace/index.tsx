@@ -1,8 +1,8 @@
 import CardListMarket from "../../components/CardListMarket";
 import CardListProduct from "../../components/CardListProducts";
 import Cart from "../../components/Cart";
+import Menu from "../../components/Menu";
 import DetailProduct from "../../components/DetailProduct";
-import { useAuthentication } from "../../providers/Authentication";
 import { useCart } from "../../providers/CartProvider";
 import { useDetails } from "../../providers/DetailsProvider";
 import { useListMarket } from "../../providers/ListMarket";
@@ -19,18 +19,12 @@ import {
   Grocery,
   ShowMore,
   Nearest,
-  Menu,
 } from "./styles";
 
 const Marketplace = (): JSX.Element => {
-  const { handleLogout } = useAuthentication();
   const { list, listProducts } = useListMarket();
   const { listCart } = useCart();
   const { detail } = useDetails();
-
-  const handleLogoutClick = (): void => {
-    handleLogout();
-  };
 
   return (
       <MainLoginContainer id="box">
@@ -82,7 +76,7 @@ const Marketplace = (): JSX.Element => {
         {listCart.length > 0 ? <Cart /> : ""}
       </div>
         </Nearest>
-      <Menu>aqui vem o menu</Menu>
+        <Menu />
       </MainLoginContainer>
   );
 };

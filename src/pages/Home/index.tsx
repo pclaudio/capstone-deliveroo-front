@@ -18,6 +18,6 @@ const Home = (): JSX.Element => {
       <button onClick={handleRedirectToSignUp}>Cadastre-se</button>
     </>
   );
-};
+}
 
 export default Home;

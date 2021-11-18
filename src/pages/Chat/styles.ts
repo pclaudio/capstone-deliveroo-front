@@ -25,6 +25,26 @@ export const MainLoginContainer = styled.div`
   }
 `;
 
+export const ButtonCountainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  position: fixed;
+  left: 10px;
+  .button2{
+    position: fixed;
+    top: 50px;
+    left: 25px;
+    width: 85px;
+    height: 25px;
+    border: none;
+    background-color: transparent;
+  }
+`;
+
 export const Promo = styled.img`
     width: 92%;
 `;
@@ -34,11 +54,56 @@ export const Filter = styled.img`
     margin-left: 10px;
 `;
 
+export const Img =styled.img`
+    display:flex;
+    align-items: center;
+    width: 75px;
+    margin-left: 10px;
+    border-radius: 15px;
+`;
+
+export const Img1 =styled.img`
+    display:flex;
+    align-items: center;
+    width:60px;
+    margin-left: 10px;
+    border-radius: 15px;
+`;
+
 export const H1 = styled.h1`
     width: 220px;
     text-align: inherit;
     margin-right: 110px;
-    margin-top: 70px;
+    margin-top: 140px;
+    margin-bottom: 20px;
+`;
+
+export const Nome = styled.p`
+    margin: 0 auto 50px;
+`;
+
+export const Msg = styled.p`
+    position: absolute;
+    left: 135px;
+`;
+
+export const ChatsContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  .chat{
+    display: flex;
+    border: 1px solid #0000001f;
+    height: 90px;
+    width: 300px;
+    border-radius: 22px;
+    margin: 15px auto;
+    background-color: white;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
 `;
 
 export const DivFilter = styled.div`

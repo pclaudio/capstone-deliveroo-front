@@ -26,7 +26,7 @@ const Marketplace = (): JSX.Element => {
     <>
       <Menu />
       <button onClick={handleLogoutClick}>Sair</button>
-      {/* <div>
+      <div>
         {list.length > 0 ? <CardListMarket /> : ""}
         <br />
 
@@ -37,10 +37,10 @@ const Marketplace = (): JSX.Element => {
         <br />
 
         {listCart.length > 0 ? <Cart /> : ""}
-      </div> */}
-      <PerfilUser />
+      </div>
+      {/* <PerfilUser />
       <Payment />
-      <MyComponent />
+      <MyComponent /> */}
     </>
   );
 };

@@ -8,7 +8,7 @@ export interface AvailableData {
 }
 export interface IFeedAvailable {
   description: string;
-  avaliation: string;
-  id: number;
+  avaliation: number;
+  id?: number;
   productId?: number;
 }

@@ -10,9 +10,8 @@ const Marketplace = (): JSX.Element => {
 
   return (
     <>
-      <h1>Marketplace</h1>
-      <button onClick={handleLogoutClick}>Sair</button>
       <Menu />
+      <button onClick={handleLogoutClick}>Sair</button>
     </>
   );
 };

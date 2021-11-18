@@ -7,10 +7,18 @@ import Cart from "../../assets/img/Buy.svg";
 const Menu = () => {
   return (
     <Container>
-        <ButtonMenu><Menu1 src={Home} />  Home</ButtonMenu>
-        <ButtonMenu><Menu1 src={Profile} /> Profile</ButtonMenu>
-        <ButtonMenu><Menu1 src={Cart} /> Cart</ButtonMenu>
-        <ButtonMenu><Menu1 src={Chat} /> Chat</ButtonMenu>
+      <ButtonMenu>
+        <Menu1 src={Home} /> Home
+      </ButtonMenu>
+      <ButtonMenu>
+        <Menu1 src={Profile} /> Profile
+      </ButtonMenu>
+      <ButtonMenu>
+        <Menu1 src={Cart} /> Cart
+      </ButtonMenu>
+      <ButtonMenu>
+        <Menu1 src={Chat} /> Chat
+      </ButtonMenu>
     </Container>
   );
 };

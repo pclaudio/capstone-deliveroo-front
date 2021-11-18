@@ -28,6 +28,7 @@ export default createGlobalStyle`
 
 body {
     background-attachment: fixed;
+    background-color: #FEFEFF;
     color: var(--grey-600);
     height: 100%;
 }

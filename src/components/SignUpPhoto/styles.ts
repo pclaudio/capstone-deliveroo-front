@@ -4,6 +4,7 @@ export const PhotoContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 24px;
+  margin: 25px;
 
   img {
     max-width: 245px;

@@ -3,49 +3,40 @@ import Home from "../../assets/img/Home.svg";
 import Profile from "../../assets/img/Profile.svg";
 import Chat from "../../assets/img/Chat.svg";
 import Cart from "../../assets/img/Buy.svg";
-import { useHistory } from "react-router-dom";
-import { useState } from "react";
 
+import { useMenu } from "../../providers/Menu";
 const Menu = () => {
-  const history = useHistory();
-  const [home, setHome] = useState(false);
-  const [perfil, setPerfil] = useState(false);
+  const {
+    homeMenu,
+    profileMenu,
+    cartMenu,
+    chatMenu,
+    handleHome,
+    handleProfile,
+    handleCart,
+    handleChat,
+  } = useMenu();
 
-  const handleRedirectToMarketplace = (): void => {
-    setHome(!home);
-    setPerfil(!perfil);
-    history.push("/marketplace");
-  };
-  const handleRedirectToProfile = (): void => {
-    setPerfil(!perfil);
-    history.push("/marketplace");
-  };
-  const handleRedirectToCart = (): void => {
-    history.push("/cart");
-  };
-  const handleRedirectToChat = (): void => {
-    history.push("/chat");
-  };
   return (
     <Container>
       <div className="GrowerButton">
-        <ButtonMenu growth={home} onClick={handleRedirectToMarketplace}>
+        <ButtonMenu growth={homeMenu} onClick={handleHome}>
           <Menu1 src={Home} /> Home
         </ButtonMenu>
       </div>
       <div className="GrowerButton">
-        <ButtonMenu growth={perfil} onClick={handleRedirectToProfile}>
+        <ButtonMenu growth={profileMenu} onClick={handleProfile}>
           <Menu1 src={Profile} /> Profile
         </ButtonMenu>
       </div>
       <div className="GrowerButton">
-        <ButtonMenu>
-          <Menu1 src={Cart} onClick={handleRedirectToCart} /> Cart
+        <ButtonMenu growth={cartMenu} onClick={handleCart}>
+          <Menu1 src={Cart} /> Cart
         </ButtonMenu>
       </div>
       <div className="GrowerButton">
-        <ButtonMenu>
-          <Menu1 src={Chat} onClick={handleRedirectToChat} /> Chat
+        <ButtonMenu growth={chatMenu} onClick={handleChat}>
+          <Menu1 src={Chat} /> Chat
         </ButtonMenu>
       </div>
     </Container>

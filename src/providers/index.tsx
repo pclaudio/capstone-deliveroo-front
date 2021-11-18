@@ -9,6 +9,7 @@ import { SignUpProvider } from "./SignUp";
 import { ListProvider } from "./ListMarket";
 import { DetailsProvider } from "./DetailsProvider";
 import { CartProvider } from "./CartProvider";
+import { MenuProvider } from "./Menu";
 
 const Providers = ({ children }: NodeProps): JSX.Element => {
   return (
@@ -21,7 +22,9 @@ const Providers = ({ children }: NodeProps): JSX.Element => {
                 <SignUpProvider>
                   <DetailsProvider>
                     <CartProvider>
-                      <ListProvider>{children}</ListProvider>
+                      <MenuProvider>
+                        <ListProvider>{children}</ListProvider>
+                      </MenuProvider>
                     </CartProvider>
                   </DetailsProvider>
                 </SignUpProvider>

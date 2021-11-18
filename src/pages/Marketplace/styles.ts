@@ -6,14 +6,6 @@ import {
   CircularProgressProps,
 } from "@mui/material";
 
-export const Main = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-`;
-
 export const MainLoginContainer = styled.div`
   display: flex;
   flex-direction: row;

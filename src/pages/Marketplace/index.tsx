@@ -20,7 +20,6 @@ import {
   ShowMore,
   Nearest,
   Menu,
-  Main
 } from "./styles";
 
 const Marketplace = (): JSX.Element => {
@@ -34,7 +33,6 @@ const Marketplace = (): JSX.Element => {
   };
 
   return (
-    <Main>
       <MainLoginContainer id="box">
         <H1>Find Your Favorite Product</H1>
         <DivFilter>
@@ -46,7 +44,7 @@ const Marketplace = (): JSX.Element => {
           />
         <Filter src={configFilter} alt="" />
         </DivFilter>
-        </MainLoginContainer>
+
         <Promo src={promo} alt=""/>
         <Nearest>
         <Grocery>
@@ -85,8 +83,7 @@ const Marketplace = (): JSX.Element => {
       </div>
         </Nearest>
       <Menu>aqui vem o menu</Menu>
-
-      </Main>
+      </MainLoginContainer>
   );
 };
 

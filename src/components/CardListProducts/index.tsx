@@ -6,7 +6,6 @@ function CardListProduct() {
   const { listProducts, setListProducts } = useListMarket();
   const { ShowDetailProduct } = useDetails();
   const { moveToCart } = useCart();
-  const { list } = useListMarket();
   return (
     <div className="container">
       <span onClick={() => setListProducts([])}>Voltar</span>

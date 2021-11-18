@@ -9,11 +9,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid;
+  border: 1px solid #0000001f;
+  border-radius: 22px;
+  justify-content: center;
 }
 .showProduct {
   margin-bottom: 5px;
-  border: 1px solid;
+  border: 1px solid black;
   width: 40%;
   display: flex;
   flex-direction: column;

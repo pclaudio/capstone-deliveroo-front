@@ -3,7 +3,7 @@ import { ContainerProps } from "./types";
 
 export const Container = styled.div`
   text-align: left;
-
+  background: transparent;
   div {
     span {
       color: #f00;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const InputContainer = styled.div<ContainerProps>`
   background: white;
   border-radius: 10px;
-  border: 2px solid grey;
+  border: 1px solid #80808038;
   color: var(--orange);
   padding: 1rem;
   width: 280px;

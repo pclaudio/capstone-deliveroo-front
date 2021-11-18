@@ -1,4 +1,9 @@
 import { useListMarket } from "../../providers/ListMarket";
+import { 
+  Button,
+} from "./styles";
+import "./style.css";
+
 
 function CardListMarket() {
   const { ProductsMarket, list } = useListMarket();
@@ -8,10 +13,10 @@ function CardListMarket() {
       {list.map((item) => {
         return (
           <div key={item.id} className="cardMarket">
-            <img src={item.image} alt={item.name} />
+            <Button onClick={() => ProductsMarket(item.id)}> <img src={item.image} alt={item.name} />
             <p>{item.name}</p>
             <span>{item.price}</span>
-            <button onClick={() => ProductsMarket(item.id)}>visitar</button>
+            </Button>
           </div>
         );
       })}

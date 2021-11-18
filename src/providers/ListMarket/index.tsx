@@ -38,7 +38,6 @@ export const ListProvider = ({ children }: IChildren) => {
       })
       .then(({ data }) => {
         setListProducts([...data.products]);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   };

@@ -25,9 +25,11 @@ const SignUpTheme = (): JSX.Element => {
   return (
     <Wireframe form="form4">
       <h1>Theme Choise</h1>
+
       <H66WireFrame>
         This data will be displayed in your account profile for security
       </H66WireFrame>
+
       <FormTheme
         id="form4"
         autoComplete=""
@@ -39,6 +41,7 @@ const SignUpTheme = (): JSX.Element => {
             <h2 className="lightText">light</h2>
           </div>
         </label>
+
         <input id="dark" type="radio" value="Dark" {...register("theme")} />
         <label className="theme dark" htmlFor="dark">
           <div className="darkBox">

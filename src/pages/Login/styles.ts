@@ -20,6 +20,7 @@ export const MainContainer = styled.div`
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
+
   #box {
     display: flex;
     flex-direction: column;
@@ -92,6 +93,7 @@ export const SocialContainer = styled.div`
     &:nth-child(1) {
       margin-right: 4px;
     }
+
     &:nth-child(2) {
       margin-left: 4px;
     }

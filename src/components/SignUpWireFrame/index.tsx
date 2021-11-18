@@ -15,10 +15,12 @@ export default function Wireframe({
   func,
   form,
   children,
-  btnText = "next",
+  btnText = "Next",
 }: WireFrameProps) {
   const { isFetching } = useFetch();
+
   const { handleStepDecrementation } = useStep();
+
   return (
     <MainContainer>
       <Container>
@@ -29,8 +31,10 @@ export default function Wireframe({
         >
           <HiChevronLeft />
         </Button>
+
         <ContainerWrapp>{children}</ContainerWrapp>
       </Container>
+
       {isFetching ? (
         <Button type="submit" disable>
           <CircularProgress size={28} />

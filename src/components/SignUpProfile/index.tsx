@@ -25,9 +25,11 @@ const SignUpProfile = (): JSX.Element => {
   return (
     <Wireframe form="form2">
       <h1>Fill in your bio to get started</h1>
+
       <H66WireFrame>
         This data will be displayed in your account profile for security
       </H66WireFrame>
+
       <FormWireFrame
         id="form2"
         autoComplete="off"
@@ -51,7 +53,7 @@ const SignUpProfile = (): JSX.Element => {
 
         <Input
           type="tel"
-          placeholder="Mobile Number"
+          placeholder="Mobile Number *"
           name="mobileNumber"
           register={register}
           error={errors.mobileNumber?.message}

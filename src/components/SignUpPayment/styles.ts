@@ -22,6 +22,7 @@ export const FormPayment = styled.form`
   input:active + .drinkcard-cc {
     opacity: 0.9;
   }
+
   input:checked + .drinkcard-cc {
     -webkit-filter: none;
     -moz-filter: none;
@@ -31,9 +32,11 @@ export const FormPayment = styled.form`
   .paypal {
     background-image: url("https://imgur.com/gwOJ7MZ.png");
   }
+
   .visa {
     background-image: url("https://imgur.com/donIj7U.png");
   }
+
   .payonner {
     background-image: url("https://imgur.com/s66p1KA.png");
   }
@@ -56,6 +59,7 @@ export const FormPayment = styled.form`
     -moz-filter: brightness(1.8) grayscale(1) opacity(0.7);
     filter: brightness(1.8) grayscale(1) opacity(0.7);
   }
+
   .drinkcard-cc:hover {
     -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
     -moz-filter: brightness(1.2) grayscale(0.5) opacity(0.9);

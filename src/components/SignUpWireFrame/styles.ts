@@ -19,11 +19,13 @@ export const MainContainer = styled.div`
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
+
   #box {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
   }
+
   .marginButtonBotton {
     margin: 25px;
   }
@@ -36,6 +38,7 @@ export const Container = styled.div`
 
   .marginButton {
     margin: 10px;
+
     svg {
       font-size: 50px;
     }

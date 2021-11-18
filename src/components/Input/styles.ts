@@ -7,6 +7,7 @@ export const Container = styled.div`
   #errorStack {
     height: 20px;
   }
+
   div {
     span {
       color: #f00;

@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
 import { AddressProps, AxiosErrorResponse } from "../../globalTypes";
 import Wireframe from "../SignUpWireFrame";
-
 import Input from "../Input";
 import "./styles";
 import { FormAdress } from "./styles";
@@ -27,7 +26,7 @@ const emptyAddress: AddressProps = {
 const SignUpAddress = (): JSX.Element => {
   const { handleSignUpAddress } = useSignUp();
 
-  const { isFetching, handleStartFetching, handleFinishFetching } = useFetch();
+  const { handleStartFetching, handleFinishFetching } = useFetch();
 
   const [address, setAddress] = useState<AddressProps>(emptyAddress);
 
@@ -95,9 +94,11 @@ const SignUpAddress = (): JSX.Element => {
   return (
     <Wireframe form="form5">
       <h1>Fill in your bio to get started</h1>
+
       <H66WireFrame>
         This data will be displayed in your account profile for security
       </H66WireFrame>
+
       <FormAdress
         id="form5"
         autoComplete="off"

@@ -20,7 +20,7 @@ const genericPost = ({ url = "", data }: AxiosRequestConfig): Promise<any> => {
 };
 
 export const postPhoto = (data: FormData): Promise<any> => {
-  const url = "/upload";
+  const url = "/image";
 
   return genericPost({ url, data });
 };

@@ -8,15 +8,16 @@ const SignUpSuccess = () => {
   const history = useHistory();
 
   const handleLoginRedirect = (): void => {
-    history.push("/login");
+    history.push("/marketplace");
   };
 
   return (
-    <Wireframe func={handleLoginRedirect} btnText="Login">
+    <Wireframe func={handleLoginRedirect} btnText="Try Order">
       <Container>
         <ContainerWrapp>
           <img src={Congrats} alt="sucess img" />
         </ContainerWrapp>
+
         <div>
           <h2>Congrats!</h2>
           <h3>Your Profile Is Ready To Use</h3>

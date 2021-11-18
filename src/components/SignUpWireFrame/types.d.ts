@@ -1,6 +1,4 @@
-import React from "react";
-
-interface WireFrameProps {
+export interface WireFrameProps {
   form?: string;
   children: any;
   func?: any;

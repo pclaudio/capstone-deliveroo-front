@@ -25,9 +25,11 @@ const SignUpPayment = (): JSX.Element => {
   return (
     <Wireframe form="form3">
       <h1>Payment Method</h1>
+
       <H66WireFrame>
         This data will be displayed in your account profile for security
       </H66WireFrame>
+
       <FormPayment
         id="form3"
         autoComplete=""

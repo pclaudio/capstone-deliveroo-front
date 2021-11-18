@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   icon?: React.ComponentType;
   register?: UseFormRegister<FieldValues>;
@@ -13,7 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   ref?: any;
 }
 
-interface ContainerProps {
+export interface ContainerProps {
   isErrored: boolean;
   isRight: boolean;
   isGlass: boolean;

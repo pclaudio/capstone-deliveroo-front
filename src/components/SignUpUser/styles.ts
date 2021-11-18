@@ -15,6 +15,7 @@ export const MainContainer = styled.div`
       rgba(255, 255, 255, 1)
     ),
     url(${bgimg});
+
   #box {
     display: flex;
     flex-direction: column;
@@ -55,13 +56,16 @@ export const Form = styled.form`
 
 export const CheckContainer = styled.div`
   width: 275px;
+
   div {
     display: flex;
+
     svg {
       font-size: 20px;
       color: rgba(21, 190, 119, 1);
     }
   }
+
   H6 {
     width: 80%;
     vertical-align: middle;
@@ -74,6 +78,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const LinkLogin = styled(Link)`
   font-weight: normal;
   font-size: 12px;

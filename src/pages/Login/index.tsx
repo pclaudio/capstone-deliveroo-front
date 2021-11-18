@@ -48,8 +48,10 @@ const Login = (): JSX.Element => {
         <div id="box">
           <Logo src={logo} />
         </div>
+
         <h3>Login To Your Account</h3>
       </div>
+
       <Container>
         <ContainerWrapp>
           <Form
@@ -77,6 +79,7 @@ const Login = (): JSX.Element => {
           </Form>
         </ContainerWrapp>
       </Container>
+
       <H6>Or Continue With</H6>
 
       <SocialContainer>
@@ -89,19 +92,21 @@ const Login = (): JSX.Element => {
         </Button>
       </SocialContainer>
 
+      <H66 to="/">Forgot Your Password?</H66>
+
       <ButtonContainer>
-        <H66 to="/">Forgot Your Password?</H66>
         {isFetching ? (
           <Button type="submit" disable>
             <CircularProgress size={28} />
           </Button>
         ) : (
           <Button form="formL" type="submit">
-            Logar
+            Login
           </Button>
         )}
-        <H66 to="/signup">don’t have an account?</H66>
       </ButtonContainer>
+
+      <H66 to="/signup">Don’t have an account?</H66>
     </MainContainer>
   );
 };

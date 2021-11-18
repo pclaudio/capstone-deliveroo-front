@@ -12,15 +12,18 @@ export const FormTheme = styled.form`
       width: 100px;
       text-align: center;
       border-radius: 10px;
+
       .darkText {
         color: white;
       }
     }
+
     .lightBox {
       border: 3px solid black;
       width: 100px;
       text-align: center;
       border-radius: 10px;
+
       .lightText {
         color: black;
       }
@@ -38,6 +41,7 @@ export const FormTheme = styled.form`
   input:active + .theme {
     opacity: 0.9;
   }
+
   input:checked + .theme {
     -webkit-filter: none;
     -moz-filter: none;
@@ -47,6 +51,7 @@ export const FormTheme = styled.form`
   .light {
     background-image: url("https://imgur.com/YUehYi7.png");
   }
+
   .dark {
     background-image: url("https://imgur.com/8HY8JmL.png");
   }
@@ -69,6 +74,7 @@ export const FormTheme = styled.form`
     -moz-filter: brightness(1.8) grayscale(1) opacity(0.7);
     filter: brightness(1.8) grayscale(1) opacity(0.7);
   }
+
   .theme:hover {
     -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
     -moz-filter: brightness(1.2) grayscale(0.5) opacity(0.9);

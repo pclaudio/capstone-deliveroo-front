@@ -36,7 +36,7 @@ export default function Wireframe({
       </Container>
 
       {isFetching ? (
-        <Button type="submit" disable>
+        <Button type="submit" className="marginButtonBotton" disable>
           <CircularProgress size={28} />
         </Button>
       ) : (

@@ -1,7 +1,7 @@
 import React from "react";
 import { HiChevronLeft } from "react-icons/hi";
 import Button from "../Button";
-import { useStep } from "../../providers/Step";
+
 import {
   CircularProgress,
   Container,
@@ -15,22 +15,17 @@ export default function Wireframe({
   isLarge,
   isFlex,
   func,
+  func2,
   form,
   children,
   btnText = "Next",
 }: WireFrameProps) {
   const { isFetching } = useFetch();
 
-  const { handleStepDecrementation } = useStep();
-
   return (
     <MainContainer>
       <Container>
-        <Button
-          short
-          className="marginButton"
-          onClick={handleStepDecrementation}
-        >
+        <Button short className="marginButton" onClick={func2}>
           <HiChevronLeft />
         </Button>
 

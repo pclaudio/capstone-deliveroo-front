@@ -12,6 +12,7 @@ export const Container = styled.div`
 `;
 
 export const InputContainer = styled.div<ContainerProps>`
+  margin-top:20px;
   background: #fefeff;
   border-radius: 10px;
   border: 1px solid #80808038;

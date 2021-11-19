@@ -3,6 +3,7 @@ import { usePerfil } from "../../providers/PerfilProvider";
 import Button from "../Button";
 import edit from "../../assets/img/Edit.svg";
 import Menu from "../Menu";
+
 import {
   Imagem,
   Container,
@@ -32,6 +33,7 @@ const PerfilUser = () => {
         <Imagem src={item.link} key={indice} />
       ))}
       <Container>
+
         {profile.map((item) => {
           return (
             <div key={item.id}>

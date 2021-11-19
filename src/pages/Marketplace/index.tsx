@@ -1,11 +1,6 @@
 import CardListMarket from "../../components/CardListMarket";
 import CardListProduct from "../../components/CardListProducts";
-import Cart from "../../components/Cart";
 import Menu from "../../components/Menu";
-import DetailProduct from "../../components/DetailProduct";
-import Search from "../../assets/img/Icon.svg"
-import { useCart } from "../../providers/CartProvider";
-import { useDetails } from "../../providers/DetailsProvider";
 import { useListMarket } from "../../providers/ListMarket";
 import "./style.css";
 import promo from "../../assets/img/Promo.svg"
@@ -20,12 +15,11 @@ import {
   Grocery,
   ShowMore,
   Nearest,
+  ShowProduct,
 } from "./styles";
 
 const Marketplace = (): JSX.Element => {
   const { list, listProducts } = useListMarket();
-  const { listCart } = useCart();
-  const { detail } = useDetails();
 
   return (
       <MainLoginContainer id="box">
@@ -39,7 +33,6 @@ const Marketplace = (): JSX.Element => {
             isGlass />
         <Filter src={configFilter} alt="" />
         </DivFilter>
-
         <Promo src={promo} alt=""/>
         <Nearest>
         <Grocery>
@@ -49,14 +42,10 @@ const Marketplace = (): JSX.Element => {
         <div>
         {list.length > 0 ? <CardListMarket /> : ""}
         <br />
-
+        <ShowProduct>
         {listProducts.length > 0 ? <CardListProduct /> : ""}
+        </ShowProduct>
         <br />
-
-        {detail.length > 0 ? <DetailProduct /> : ""}
-        <br />
-
-        {listCart.length > 0 ? <Cart /> : ""}
       </div>
         </Nearest>
         <Nearest>
@@ -67,14 +56,6 @@ const Marketplace = (): JSX.Element => {
         <div>
         {list.length > 0 ? <CardListMarket /> : ""}
         <br />
-
-        {listProducts.length > 0 ? <CardListProduct /> : ""}
-        <br />
-
-        {detail.length > 0 ? <DetailProduct /> : ""}
-        <br />
-
-        {listCart.length > 0 ? <Cart /> : ""}
       </div>
         </Nearest>
         <Menu />

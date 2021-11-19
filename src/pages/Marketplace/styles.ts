@@ -25,6 +25,17 @@ export const MainLoginContainer = styled.div`
   }
 `;
 
+export const Fundo = styled.img`
+  width:100%;
+`;
+
+export const ShowProduct = styled.div`
+    position: absolute;
+    top: 0;
+    background: aliceblue;
+    z-index: 9;
+`;
+
 export const Promo = styled.img`
     width: 92%;
 `;

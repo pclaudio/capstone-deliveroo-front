@@ -25,6 +25,6 @@ const Home = (): JSX.Element => {
       </ButtonCountainer>
     </MainLoginContainer>
   );
-};
+}
 
 export default Home;

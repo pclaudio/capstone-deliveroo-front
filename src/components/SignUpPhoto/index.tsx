@@ -99,6 +99,6 @@ const SignUpPhoto = (): JSX.Element => {
       </DivButton>
     </MainContainer>
   );
-};
+}
 
 export default SignUpPhoto;

@@ -109,6 +109,6 @@ const Login = (): JSX.Element => {
       <H66 to="/signup">Don’t have an account?</H66>
     </MainContainer>
   );
-};
+}
 
 export default Login;

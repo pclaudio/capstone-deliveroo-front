@@ -166,6 +166,6 @@ const SignUpAddress = (): JSX.Element => {
       </FormAdress>
     </Wireframe>
   );
-};
+}
 
 export default SignUpAddress;

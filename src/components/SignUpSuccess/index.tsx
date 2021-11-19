@@ -25,6 +25,6 @@ const SignUpSuccess = () => {
       </Container>
     </Wireframe>
   );
-};
+}
 
 export default SignUpSuccess;

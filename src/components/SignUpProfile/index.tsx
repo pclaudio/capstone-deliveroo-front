@@ -61,6 +61,6 @@ const SignUpProfile = (): JSX.Element => {
       </FormWireFrame>
     </Wireframe>
   );
-};
+}
 
 export default SignUpProfile;

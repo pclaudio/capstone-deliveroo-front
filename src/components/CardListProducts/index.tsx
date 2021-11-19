@@ -1,34 +1,33 @@
-import { useAvailable } from "../../providers/AvailableProvider";
 import { useCart } from "../../providers/CartProvider";
-import { useDetails } from "../../providers/DetailsProvider";
 import { useListMarket } from "../../providers/ListMarket";
-
+import promo from "../../assets/img/Grocery.svg";
+import back from "../../assets/img/Back.svg";
 function CardListProduct() {
   const { listProducts, setListProducts } = useListMarket();
-  const { ShowDetailProduct } = useDetails();
   const { moveToCart } = useCart();
-  const { GetProductComent } = useAvailable();
-
-  const showFeed = (id: number) => {
-    ShowDetailProduct(id);
-    GetProductComent(id);
-  };
   return (
     <div className="container">
-      <span onClick={() => setListProducts([])}>Voltar</span>
-
-      {listProducts.map((item) => {
-        return (
-          <div key={item.id} className="showProduct">
-            <p>{item.name}</p>
-            <img src={item.image} alt={item.name} />
-            <p>{item.price}</p>
-            <button onClick={() => showFeed(item.id)}>Ver Mais</button>
-            <button onClick={() => moveToCart(item)}>Adcionar ao Carrim</button>
-            <hr />
-          </div>
-        );
-      })}
+      <img className="imgFundo" src={promo} alt="" />
+      <div className="backButton">
+        <img src={back} alt="" onClick={() => setListProducts([])} />
+      </div>
+      <div className="countainerProduct">
+        {listProducts.map((item) => {
+          return (
+            <div className="showProduct">
+              <div
+                key={item.id}
+                className="Product"
+                onClick={() => moveToCart(item)}
+              >
+                <h3 className="pzin">{item.name}</h3>
+                <img src={item.image} alt={item.name} />
+                <h3 className="pzin">R$ {item.price}</h3>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

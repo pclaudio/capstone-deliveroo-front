@@ -52,6 +52,6 @@ const SignUpTheme = (): JSX.Element => {
       <Error>{errors.theme?.message}</Error>
     </Wireframe>
   );
-};
+}
 
 export default SignUpTheme;

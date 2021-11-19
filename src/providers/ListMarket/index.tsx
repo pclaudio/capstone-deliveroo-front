@@ -31,10 +31,6 @@ export const ListProvider = ({ children }: IChildren) => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    MarketPlace();
-  }, [list]);
-
   const ProductsMarket = async (id: number) => {
     await axios
       .get(`https://json-capstone.herokuapp.com/users/${id}?_embed=products`, {
@@ -42,10 +38,15 @@ export const ListProvider = ({ children }: IChildren) => {
       })
       .then(({ data }) => {
         setListProducts([...data.products]);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   };
+  useEffect(() => {
+    MarketPlace();
+
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <ListContext.Provider
       value={{

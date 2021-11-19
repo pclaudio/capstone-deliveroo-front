@@ -115,5 +115,5 @@ const SignUpUser = (): JSX.Element => {
       <LinkLogin to="/login">Already have an account?</LinkLogin>
     </MainContainer>
   );
-};
+}
 export default SignUpUser;

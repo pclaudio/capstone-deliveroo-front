@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useToken } from "../Token";
 import { useUser } from "../User";
 import {
@@ -24,8 +24,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
   const [theme, setTheme] = useState<ITheme[]>([] as ITheme[]);
   const [payment, setPayment] = useState<IPayment[]>([] as IPayment[]);
 
-  const getAddress = () => {
-    axios
+  const getAddress = async () => {
+    await axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=addresses`,
         {
@@ -35,8 +35,14 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setAddress([...data.addresses]))
       .catch((err) => console.log(err));
   };
-  const getProfile = () => {
-    axios
+  useEffect(() => {
+    getAddress();
+
+    // eslint-disable-next-line
+  }, []);
+
+  const getProfile = async () => {
+    await axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=profiles`,
         {
@@ -46,8 +52,14 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setProfile([...data.profiles]))
       .catch((err) => console.log(err));
   };
-  const getPhoto = () => {
-    axios
+  useEffect(() => {
+    getProfile();
+
+    // eslint-disable-next-line
+  }, []);
+
+  const getPhoto = async () => {
+    await axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=photos`,
         {
@@ -57,8 +69,14 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setPhoto([...data.photos]))
       .catch((err) => console.log(err));
   };
-  const getTheme = () => {
-    axios
+  useEffect(() => {
+    getPhoto();
+
+    // eslint-disable-next-line
+  }, []);
+
+  const getTheme = async () => {
+    await axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=themes`,
         {
@@ -68,6 +86,11 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setTheme([...data.themes]))
       .catch((err) => console.log(err));
   };
+  useEffect(() => {
+    getTheme();
+
+    // eslint-disable-next-line
+  }, []);
 
   const getPayment = async () => {
     await axios
@@ -77,11 +100,14 @@ export const PerfilProvider = ({ children }: IChildren) => {
           headers: { Authorization: `Bearer ${token}` },
         }
       )
-      .then(({ data }) => {
-        setPayment([...data.payments]);
-      })
+      .then(({ data }) => setPayment([...data.payments]))
       .catch((err) => console.log(err));
   };
+  useEffect(() => {
+    getPayment();
+
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <PerfilContext.Provider

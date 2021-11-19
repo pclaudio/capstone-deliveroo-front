@@ -53,4 +53,23 @@ export const Container = styled.button<ContainerProps>`
         color: black;
       }
     `}
+
+    ${(props) =>
+    props.BTNcart &&
+    css`
+      width: 26px;
+      height: 26px;
+      background: var(--primary-color);
+      color: white;
+      border: 1px solid var(--primary-color-50);
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+
+      &:hover {
+        background: var(--hover-color);
+        font-weight: 700;
+        color: black;
+      }
+    `}
 `;

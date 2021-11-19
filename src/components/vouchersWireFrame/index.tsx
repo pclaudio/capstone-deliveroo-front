@@ -1,7 +1,6 @@
 import React from "react";
 import { HiChevronLeft } from "react-icons/hi";
 import Button from "../Button";
-
 import {
   CircularProgress,
   Container,
@@ -10,22 +9,28 @@ import {
 } from "./styles";
 import { WireFrameProps } from "./types";
 import { useFetch } from "../../providers/Fetch";
+import { useHistory } from "react-router-dom";
 
 export default function Wireframe({
   isLarge,
   isFlex,
   func,
-  func2,
   form,
   children,
   btnText = "Next",
 }: WireFrameProps) {
   const { isFetching } = useFetch();
 
+  const history = useHistory();
+
+  const handleProfile = (): void => {
+    history.push("/Profile");
+  };
+
   return (
     <MainContainer>
       <Container>
-        <Button short className="marginButton" onClick={func2}>
+        <Button short className="marginButton" onClick={handleProfile}>
           <HiChevronLeft />
         </Button>
 

@@ -58,6 +58,6 @@ const SignUpPayment = (): JSX.Element => {
       </FormPayment>
     </Wireframe>
   );
-};
+}
 
 export default SignUpPayment;

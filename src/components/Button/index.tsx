@@ -8,10 +8,12 @@ const Button = ({
   short,
   white,
   isLarge,
+  BTNcart,
   ...rest
 }: ButtonProps) => {
   return (
     <Container
+      BTNcart={!!BTNcart}
       disable={!!disable}
       medium={!!medium}
       short={!!short}

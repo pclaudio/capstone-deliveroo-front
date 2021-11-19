@@ -32,6 +32,6 @@ const Input = ({
       </InputContainer>
     </Container>
   );
-};
+}
 
 export default Input;

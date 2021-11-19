@@ -5,8 +5,11 @@ import LandingPage from "../pages/LandingPage";
 import OurTeam from "../pages/OurTeam";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import Profile from "../pages/Profile";
+import Chat from "../pages/Chat";
+import Cart from "../pages/Cart";
 import Marketplace from "../pages/Marketplace";
-import { Teste } from "../pages/teste";
+import { VoucherPage } from "../pages/Voucher";
 
 const Routes = (): JSX.Element => {
   return (
@@ -34,8 +37,21 @@ const Routes = (): JSX.Element => {
       <Route path="/marketplace" isPrivate>
         <Marketplace />
       </Route>
-      <Route path="/teste" isPrivate>
-        <Teste />
+
+      <Route path="/profile" isPrivate>
+        <Profile />
+      </Route>
+
+      <Route path="/chat" isPrivate>
+        <Chat />
+      </Route>
+
+      <Route path="/cart" isPrivate>
+        <Cart />
+      </Route>
+
+      <Route path="/voucher" isPrivate>
+        <VoucherPage />
       </Route>
     </Switch>
   );

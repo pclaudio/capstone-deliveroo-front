@@ -1,87 +1,67 @@
+import { useAuthentication } from "../../providers/Authentication";
 import { usePerfil } from "../../providers/PerfilProvider";
+import Button from "../Button";
+import edit from "../../assets/img/Edit.svg";
+import Menu from "../Menu";
+import voucher from "../../assets/img/VoucherIcon.svg";
+
+import {
+  Imagem,
+  Container,
+  ContainerMaster,
+  H1,
+  Edit,
+  Voucher,
+  Favorito,
+  VoucherImg,
+} from "./styles";
+import { useHistory } from "react-router";
 
 const PerfilUser = () => {
-  const {
-    theme,
-    getTheme,
-    payment,
-    getPayment,
-    photo,
-    getPhoto,
-    profile,
-    address,
-    getProfile,
-    getAddress,
-  } = usePerfil();
+  const { handleLogout } = useAuthentication();
 
-  const handlePerfil = () => {
-    getAddress();
-    getProfile();
-    getPhoto();
-    getPayment();
-    getTheme();
+  const handleLogoutClick = (): void => {
+    handleLogout();
   };
+
+  const history = useHistory();
+
+  const handleVoucher = (): void => {
+    history.push("/voucher");
+  };
+  const { photo, profile } = usePerfil();
+
   return (
-    <div>
-      {photo.map((item) => (
-        <img src={item.link} />
+    <ContainerMaster>
+      {photo.map((item, indice) => (
+        <Imagem src={item.link} key={indice} />
       ))}
-      <h1>Perfil</h1>
-      <button onClick={handlePerfil}>Exibir</button>
-      {profile.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>
-              Nome:
-              <b>
-                {item.firstName} {item.lastName}
-              </b>
-            </p>
-            <p>
-              Telefone:
-              <b>{item.mobileNumber}</b>
-            </p>
-          </div>
-        );
-      })}
-      <hr />
-      {address.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>
-              Cidade: <b>{item.city}</b>
-            </p>
-            <p>
-              Bairro: <b>{item.district}</b>
-            </p>
-            <p>
-              Estado: <b>{item.state}</b>
-            </p>
-            <p>
-              Rua: <b>{item.address1}</b>
-            </p>
-            <p>
-              numero: <b>{item.number}</b>
-            </p>
-            <p>
-              Codigo Postal: <b>{item.cep}</b>
-            </p>
-          </div>
-        );
-      })}
-      <hr />
-      {theme.map((item) => (
-        <p>
-          Tema Favorito: <b>{item.theme}</b>
-        </p>
-      ))}
-      <hr />
-      {payment.map((item) => (
-        <p>
-          Forma de Pagamento: <b>{item.payment}</b>
-        </p>
-      ))}
-    </div>
+      <Container>
+        {profile.map((item) => {
+          return (
+            <div key={item.id}>
+              <H1>
+                <b>
+                  {item.firstName} {item.lastName}
+                </b>
+                <Edit src={edit} alt="" />
+              </H1>
+            </div>
+          );
+        })}
+        <Voucher onClick={handleVoucher}>
+          {" "}
+          <VoucherImg src={voucher} alt="" /> click here to see yours vouchers{" "}
+        </Voucher>
+
+        <H1 className="fav"> Favorite </H1>
+        <Favorito> imagem do favorito aqui mockado </Favorito>
+        <Button className="logout" onClick={handleLogoutClick}>
+          Logout
+        </Button>
+      </Container>
+      <Menu />
+    </ContainerMaster>
   );
 };
 export default PerfilUser;

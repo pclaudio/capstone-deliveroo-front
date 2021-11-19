@@ -29,6 +29,6 @@ const SignUp = (): JSX.Element => {
       )}
     </>
   );
-};
+}
 
 export default SignUp;

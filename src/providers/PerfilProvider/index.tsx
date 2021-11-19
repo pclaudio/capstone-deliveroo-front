@@ -24,7 +24,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
   const [theme, setTheme] = useState<ITheme[]>([] as ITheme[]);
   const [payment, setPayment] = useState<IPayment[]>([] as IPayment[]);
 
-  const getAddress = () => {
+  const getAddress = async () => {
+    await
     axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=addresses`,
@@ -37,7 +38,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
   };
   useEffect(() => {getAddress()}, []);
 
-  const getProfile = () => {
+  const getProfile = async () => {
+    await
     axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=profiles`,
@@ -50,7 +52,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
   };
   useEffect(() => {getProfile()}, []); 
 
-  const getPhoto = () => {
+  const getPhoto = async () => {
+    await
     axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=photos`,
@@ -63,7 +66,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
   };
   useEffect(() => {getPhoto()}, []);
 
-  const getTheme = () => {
+  const getTheme =  async () => {
+    await
     axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=themes`,
@@ -76,7 +80,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
   };
   useEffect(() => {getTheme()}, []);
   
-  const getPayment = () => {
+  const getPayment = async () => {
+    await
     axios
       .get(
         `https://json-capstone.herokuapp.com/users/${user.id}?_embed=payments`,

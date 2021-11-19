@@ -36,7 +36,7 @@ const Marketplace = (): JSX.Element => {
             type="text"
             placeholder="What do you want to order?"
             name="filter"
-            isGlass /> <img src={Search} alt="" />
+            isGlass />
         <Filter src={configFilter} alt="" />
         </DivFilter>
 

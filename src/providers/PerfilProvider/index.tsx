@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useToken } from "../Token";
 import { useUser } from "../User";
 import {
@@ -35,6 +35,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setAddress([...data.addresses]))
       .catch((err) => console.log(err));
   };
+  useEffect(() => {getAddress()}, []);
+
   const getProfile = () => {
     axios
       .get(
@@ -46,6 +48,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setProfile([...data.profiles]))
       .catch((err) => console.log(err));
   };
+  useEffect(() => {getProfile()}, []); 
+
   const getPhoto = () => {
     axios
       .get(
@@ -57,6 +61,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setPhoto([...data.photos]))
       .catch((err) => console.log(err));
   };
+  useEffect(() => {getPhoto()}, []);
+
   const getTheme = () => {
     axios
       .get(
@@ -68,7 +74,8 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setTheme([...data.themes]))
       .catch((err) => console.log(err));
   };
-
+  useEffect(() => {getTheme()}, []);
+  
   const getPayment = () => {
     axios
       .get(
@@ -80,6 +87,7 @@ export const PerfilProvider = ({ children }: IChildren) => {
       .then(({ data }) => setPayment([...data.payments]))
       .catch((err) => console.log(err));
   };
+  useEffect(() => {getPayment()}, []);
 
   return (
     <PerfilContext.Provider

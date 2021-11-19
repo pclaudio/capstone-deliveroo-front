@@ -5,6 +5,8 @@ interface ButtonProp {
 }
 
 export const Container = styled.div`
+  right: 0;
+  left: 0;
   position: fixed;
   bottom: 10px;
   background-color: white;

@@ -10,6 +10,7 @@ import { ListProvider } from "./ListMarket";
 import { DetailsProvider } from "./DetailsProvider";
 import { CartProvider } from "./CartProvider";
 import { MenuProvider } from "./Menu";
+import { PerfilProvider } from "./PerfilProvider";
 
 const Providers = ({ children }: NodeProps): JSX.Element => {
   return (
@@ -23,7 +24,9 @@ const Providers = ({ children }: NodeProps): JSX.Element => {
                   <DetailsProvider>
                     <CartProvider>
                       <MenuProvider>
+                        <PerfilProvider>
                         <ListProvider>{children}</ListProvider>
+                        </PerfilProvider>
                       </MenuProvider>
                     </CartProvider>
                   </DetailsProvider>

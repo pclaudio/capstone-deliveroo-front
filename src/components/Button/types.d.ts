@@ -1,14 +1,20 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   disable?: boolean;
   medium?: boolean;
-  full?: boolean;
+  short?: boolean;
+  white?: boolean;
+  isLarge?: boolean;
+  BTNcart?: boolean;
 }
 
-interface ContainerProps {
+export interface ContainerProps {
   disable: boolean;
   medium: boolean;
-  full: boolean;
+  short: boolean;
+  white?: boolean;
+  isLarge?: boolean;
+  BTNcart?: boolean;
 }

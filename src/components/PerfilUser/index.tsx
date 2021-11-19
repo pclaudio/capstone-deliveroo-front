@@ -3,6 +3,7 @@ import { usePerfil } from "../../providers/PerfilProvider";
 import Button from "../Button";
 import edit from "../../assets/img/Edit.svg";
 import Menu from "../Menu";
+import voucher from "../../assets/img/VoucherIcon.svg"
 
 import {
   Imagem,
@@ -12,13 +13,21 @@ import {
   Edit,
   Voucher,
   Favorito,
+  VoucherImg
 } from "./styles";
+import { useHistory } from "react-router";
 
 const PerfilUser = () => {
   const { handleLogout } = useAuthentication();
 
   const handleLogoutClick = (): void => {
     handleLogout();
+  };
+
+  const history = useHistory();
+
+  const handleVoucher = (): void => {
+    history.push("/voucher");
   };
   const { photo, getPhoto, profile, getProfile } = usePerfil();
 
@@ -46,7 +55,7 @@ const PerfilUser = () => {
             </div>
           );
         })}
-        <Voucher>component do voucher aqui </Voucher>
+        <Voucher onClick={handleVoucher}> <VoucherImg src={voucher} alt="" /> click here to see yours vouchers </Voucher>
 
         <H1 className="fav"> Favorite </H1>
         <Favorito> imagem do favorito aqui mockado </Favorito>
@@ -57,5 +66,5 @@ const PerfilUser = () => {
       <Menu />
     </ContainerMaster>
   );
-};
+}
 export default PerfilUser;

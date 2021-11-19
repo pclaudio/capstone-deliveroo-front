@@ -14,6 +14,6 @@ const SignUpSuccess = () => {
       <button onClick={handleLoginRedirect}>Login</button>
     </>
   );
-};
+}
 
 export default SignUpSuccess;

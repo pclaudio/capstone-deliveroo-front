@@ -102,6 +102,6 @@ const Login = (): JSX.Element => {
       </LoginContainer>
     </MainLoginContainer>
   );
-};
+}
 
 export default Login;

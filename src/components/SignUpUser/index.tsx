@@ -41,5 +41,5 @@ const SignUpUser = (): JSX.Element => {
       </form>
     </>
   );
-};
+}
 export default SignUpUser;

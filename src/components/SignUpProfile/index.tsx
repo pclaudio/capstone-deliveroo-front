@@ -50,6 +50,6 @@ const SignUpProfile = (): JSX.Element => {
       </form>
     </>
   );
-};
+}
 
 export default SignUpProfile;

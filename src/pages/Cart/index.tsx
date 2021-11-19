@@ -1,16 +1,23 @@
-import Menu from "../../components/Menu";
+import { Cart } from "../../components/CartWireFrame/Cart";
 import {
   MainLoginContainer,
-  H1,
 } from "./styles";
 
 const Marketplace = (): JSX.Element => {
   return (
       <MainLoginContainer id="box">
-        <H1>Cart</H1>
-        <Menu />
+        <Cart />;
       </MainLoginContainer>
   );
 };
 
 export default Marketplace;
+
+
+
+
+
+
+export const Teste = () => {
+
+}

@@ -41,6 +41,6 @@ const Menu = () => {
       </div>
     </Container>
   );
-};
+}
 
 export default Menu;

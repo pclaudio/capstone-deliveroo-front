@@ -61,6 +61,6 @@ const Marketplace = (): JSX.Element => {
         <Menu />
       </MainLoginContainer>
   );
-};
+}
 
 export default Marketplace;

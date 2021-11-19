@@ -31,6 +31,11 @@ export const Container = styled.div`
     }
 `;
 
+export const VoucherImg = styled.img`
+    width: 15%;
+    margin: 15px;
+`;
+
 export const Voucher = styled.div`
     display: flex;
     border: 1px solid #0000001f;

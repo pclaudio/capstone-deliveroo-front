@@ -38,6 +38,6 @@ const SignUpTheme = (): JSX.Element => {
       </form>
     </>
   );
-};
+}
 
 export default SignUpTheme;

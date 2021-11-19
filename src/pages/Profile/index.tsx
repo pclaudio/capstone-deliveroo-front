@@ -8,6 +8,6 @@ const Marketplace = (): JSX.Element => {
       <PerfilUser />
     </>
   );
-};
+}
 
 export default Marketplace;

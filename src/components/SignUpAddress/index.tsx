@@ -140,6 +140,6 @@ const SignUpAddress = (): JSX.Element => {
       </form>
     </>
   );
-};
+}
 
 export default SignUpAddress;

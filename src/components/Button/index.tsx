@@ -7,6 +7,7 @@ const Button = ({
   medium,
   short,
   white,
+  isLarge,
   ...rest
 }: ButtonProps) => {
   return (
@@ -15,6 +16,7 @@ const Button = ({
       medium={!!medium}
       short={!!short}
       white={!!white}
+      isLarge={!!isLarge}
       type="button"
       {...rest}
     >

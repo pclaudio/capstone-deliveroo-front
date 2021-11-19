@@ -20,6 +20,12 @@ export const Container = styled.button<ContainerProps>`
   }
 
   ${(props) =>
+    props.isLarge &&
+    css`
+      width: 315px;
+    `}
+
+  ${(props) =>
     props.short &&
     css`
       width: 57px;
@@ -27,7 +33,7 @@ export const Container = styled.button<ContainerProps>`
       color: #da6317;
 
       &:hover {
-        background: red;
+        background: rgba(249, 168, 77, 0.8);
         font-weight: 700;
         color: black;
       }

@@ -1,5 +1,6 @@
 import React from "react";
-import { Rating } from "../../components/Rating";
+
+import { Voucher } from "../../components/vouchers";
 export const Teste = () => {
-  return <Rating />;
+  return <Voucher />;
 };

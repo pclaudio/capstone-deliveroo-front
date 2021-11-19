@@ -1,13 +1,6 @@
-import VoucherPage from "../../components/vouchersWireFrame";
+import React from "react";
+import { Voucher } from "../../components/vouchers";
 
-const Voucher = (): JSX.Element => {
-
-
-  return (
-    <>
-      <VoucherPage />
-    </>
-  );
-}
-
-export default Voucher;
+export const VoucherPage = () => {
+  return <Voucher />;
+};

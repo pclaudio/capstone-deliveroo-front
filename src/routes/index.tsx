@@ -6,8 +6,8 @@ import SignUp from "../pages/SignUp";
 import Profile from "../pages/Profile"
 import Chat from "../pages/Chat"
 import Cart from "../pages/Cart"
-import Voucher from "../pages/Voucher"
 import Marketplace from "../pages/Marketplace";
+import { VoucherPage } from "../pages/Voucher";
 
 const Routes = (): JSX.Element => {
   return (
@@ -39,8 +39,9 @@ const Routes = (): JSX.Element => {
       <Route path="/cart" isPrivate>
         <Cart />
       </Route>
+
       <Route path="/voucher" isPrivate>
-        <Voucher />
+        <VoucherPage />
       </Route>
     </Switch>
   );

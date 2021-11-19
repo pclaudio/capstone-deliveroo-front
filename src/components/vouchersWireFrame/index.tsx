@@ -18,7 +18,6 @@ export default function Wireframe({
   isLarge,
   isFlex,
   func,
-  func2,
   form,
   children,
   btnText = "Next",
